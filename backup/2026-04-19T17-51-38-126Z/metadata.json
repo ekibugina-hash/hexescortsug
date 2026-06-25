@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-19T17:53:47.782Z",
+  "tables": [
+    "profiles",
+    "user_roles",
+    "monkey_d"
+  ],
+  "buckets": [
+    "avatars",
+    "profile-images"
+  ]
+}
