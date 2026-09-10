@@ -44,8 +44,7 @@ const BACKED_UP_IDS = new Set(staticProfiles.map(p => p.id));
 function mapDbProfile(p: any): ProfileType {
   const isLocal = BACKED_UP_IDS.has(String(p.id));
 
-  // Helper to convert Supabase storage URLs to our smart media proxy
-  // The proxy (app/api/media) will automatically check local backup first, then fallback to Supabase
+  // Direct static URL or global CDN proxy - avoids Vercel serverless CPU & Supabase egress
   const transformUrl = (url: string | null | undefined): string => {
     if (!url) return "/placeholder.svg";
     
@@ -54,12 +53,21 @@ function mapDbProfile(p: any): ProfileType {
       return url;
     }
     
-    // Route ALL Supabase storage URLs through our smart proxy
-    if (url.includes("/storage/v1/object/public/")) {
+    // If backed up locally, serve directly from static /storage/... (0 Vercel CPU, 0 Supabase egress)
+    if (isLocal && url.includes("/storage/v1/object/public/")) {
       const match = url.match(/\.supabase\.co\/storage\/v1\/object\/public\/(.*)/);
       if (match && match[1]) {
-        return `/api/media/${match[1]}`;
+        return `/storage/${match[1]}`;
       }
+    }
+    
+    // For remote Supabase images, route via wsrv.nl directly to offload Vercel & Supabase
+    if (url.includes("/storage/v1/object/public/")) {
+      const isImage = /\.(jpg|jpeg|png|webp|jfif|avif)$/i.test(url);
+      if (isImage) {
+        return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=800&output=webp&q=80`;
+      }
+      return url;
     }
     
     return url;
@@ -106,7 +114,7 @@ export async function fetchAllProfiles(seed?: string) {
   }
   
   try {
-    // @ts-ignore – Supabase type chain depth limit
+    // @ts-ignore - Supabase type chain depth limit
     const { data, error } = await (supabase as any)
       .from("profiles")
       .select("*")
