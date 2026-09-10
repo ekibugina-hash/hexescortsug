@@ -3,7 +3,7 @@ import { fetchAllProfiles } from "@/data/allProfiles";
 import type { Metadata } from 'next';
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export const revalidate = 60; // Refresh data every 60 seconds
+export const revalidate = 300; // Cache index data for 5 minutes
 
 export const metadata: Metadata = {
   title: 'Independent Escorts in Uganda - Real & Verified Call Girls | Hex Escorts UG',
@@ -15,10 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  // Generate a fresh seed for every request to ensure a new shuffle on refresh
   const seed = Math.random().toString(36).substring(2, 10);
-  
-  // Fetch all profiles for index/all locations
   const rawProfiles = await fetchAllProfiles(seed);
 
   const breadcrumbItems = [
