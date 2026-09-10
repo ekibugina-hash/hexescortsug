@@ -38,30 +38,19 @@ export function sortAndShuffleProfiles(profiles: ProfileType[], seed?: string): 
   return [...shuffleArray(pinned, rand), ...shuffleArray(regular, rand)];
 }
 
-// Create a set of IDs that we have locally backed up for fast lookup
-const BACKED_UP_IDS = new Set(staticProfiles.map(p => p.id));
-
 function mapDbProfile(p: any): ProfileType {
-  const isLocal = BACKED_UP_IDS.has(String(p.id));
-
-  // Direct static URL or global CDN proxy - avoids Vercel serverless CPU & Supabase egress
+  // Transform storage URLs to wsrv.nl CDN proxy or keep local static paths
   const transformUrl = (url: string | null | undefined): string => {
     if (!url) return "/placeholder.svg";
     
-    // If it's already a local path or static reference, keep it
+    // If it's already a local static path, keep it
     if (url.startsWith('/storage/') || url.startsWith('/') || !url.includes('.supabase.co')) {
       return url;
     }
     
-    // If backed up locally, serve directly from static /storage/... (0 Vercel CPU, 0 Supabase egress)
-    if (isLocal && url.includes("/storage/v1/object/public/")) {
-      const match = url.match(/\.supabase\.co\/storage\/v1\/object\/public\/(.*)/);
-      if (match && match[1]) {
-        return `/storage/${match[1]}`;
-      }
-    }
-    
-    // For remote Supabase images, route via wsrv.nl directly to offload Vercel & Supabase
+    // For all Supabase storage URLs, route through wsrv.nl image CDN proxy
+    // This guarantees 100% of images (both newly added and existing) always load,
+    // while offloading Vercel serverless CPU and caching Supabase storage on CDN
     if (url.includes("/storage/v1/object/public/")) {
       const isImage = /\.(jpg|jpeg|png|webp|jfif|avif)$/i.test(url);
       if (isImage) {
