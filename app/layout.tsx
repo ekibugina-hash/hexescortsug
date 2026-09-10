@@ -6,7 +6,7 @@ import React, { Suspense } from "react";
 import PostHogPageview from "./posthog-pageview";
 
 export const metadata: Metadata = {
-  title: "Escorts UG – #1 Verified Hookup Call Girls & Discreet Escorts in Uganda",
+  title: "Escorts UG - #1 Verified Hookup Call Girls & Discreet Escorts in Uganda",
   description:
     "Best Uganda escorts & sexy girls in Kampala. Find discreet hookups, ebony call girls, and verified companions in Entebbe, Jinja, Mbarara and countrywide. Direct WhatsApp contacts for real sexy girls in Uganda. #1 Ugandan escort directory.",
   keywords: [
@@ -66,8 +66,22 @@ export const metadata: Metadata = {
       "-p0KFe2PgD4tXKEQ7tB5IS2OQ2bErUgDzWaq_W8JEO4"
     ],
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-48x48.png', type: 'image/png', sizes: '48x48' },
+      { url: '/icon.png', type: 'image/png', sizes: '192x192' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
-    title: "Hex Escorts UG – #1 Verified Hookup Call Girls & Discreet Escorts in Uganda",
+    title: "Hex Escorts UG - #1 Verified Hookup Call Girls & Discreet Escorts in Uganda",
     description:
       "Find discreet, verified escorts in Uganda with real photos and direct WhatsApp contacts. Real profiles from Kampala, Entebbe, Jinja, Mbarara and countrywide.",
     url: "https://www.hexescortsug.com",
@@ -97,6 +111,13 @@ export default function RootLayout({
         <meta name="geo.region" content="UG" />
         <meta name="geo.country" content="Uganda" />
         <meta name="language" content="English" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/icon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <script
           type="application/ld+json"
