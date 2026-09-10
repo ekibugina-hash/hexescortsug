@@ -10,12 +10,10 @@ export const metadata: Metadata = {
   }
 };
 
-export const revalidate = 60;
+export const revalidate = 300; // Cache VIP data for 5 minutes
 
 export default async function Page() {
-  // Generate a fresh seed for every request
   const seed = Math.random().toString(36).substring(2, 10);
-  
   const rawProfiles = await fetchAllProfiles(seed);
   return <VipPage initialProfiles={rawProfiles} shuffleSeed={seed} />;
 }
