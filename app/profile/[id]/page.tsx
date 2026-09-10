@@ -5,7 +5,7 @@ import { slugify } from "@/lib/utils";
 import { notFound, permanentRedirect } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export const revalidate = 60; // Refresh profile data every 60 seconds to save Edge Requests
+export const revalidate = 600; // Cache individual profile data for 10 minutes
 export const dynamicParams = true;
 
 type Props = {
