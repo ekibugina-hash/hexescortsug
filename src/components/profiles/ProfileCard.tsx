@@ -21,16 +21,31 @@ interface ProfileCardProps {
 export function ProfileCard({ profile, featured = false, priority = false, animate = true, index = 0 }: ProfileCardProps) {
   const [showContact, setShowContact] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [imgSrc, setImgSrc] = useState<string>(() => getMediaUrl(profile.profileImage));
   const isMobile = useIsMobile();
   const { handlePhoneClick } = usePhoneHandler();
   
   useEffect(() => {
     setIsMounted(true);
-  }, []);
+    setImgSrc(getMediaUrl(profile.profileImage));
+  }, [profile.profileImage]);
+
+  const handleImageError = () => {
+    if (imgSrc.includes("wsrv.nl/?url=")) {
+      try {
+        const directUrl = decodeURIComponent(imgSrc.split("url=")[1].split("&")[0]);
+        if (directUrl && directUrl !== imgSrc) {
+          setImgSrc(directUrl);
+          return;
+        }
+      } catch {}
+    }
+    setImgSrc("/placeholder.svg");
+  };
 
   // Use the phone number from the profile data
   const phoneNumber = profile.phone || "";
-  // Convert to international format for WhatsApp: 07XXXXXXXX → 256XXXXXXXX
+  // Convert to international format for WhatsApp: 07XXXXXXXX -> 256XXXXXXXX
   const toWhatsAppNumber = (num: string) => {
     if (!num) return "";
     const cleaned = num.replace(/[\s\(\)\-+]/g, "");
@@ -91,13 +106,14 @@ export function ProfileCard({ profile, featured = false, priority = false, anima
             <Link href={`/profile/${slugify(profile.name)}`} prefetch={false}>
               <div className="w-full h-full overflow-hidden">
                 <Image 
-                   src={getMediaUrl(profile.profileImage)} 
+                  src={imgSrc} 
                   alt={`${profile.name} - verified sexy call girl and erotic companion in ${profile.location} - Hex Escorts UG`}
                   className="w-full h-full object-cover"
                   priority={priority}
                   width={300}
                   height={400}
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  onError={handleImageError}
                 />
               </div>
             </Link>
