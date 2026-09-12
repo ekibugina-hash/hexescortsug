@@ -3,7 +3,26 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true,
-    domains: ['zdiosdkoxcimlovewroz.supabase.co', 'images.unsplash.com'],
+    domains: [
+      'dkyikirsvpauhbexbhvu.supabase.co',
+      'zdiosdkoxcimlovewroz.supabase.co',
+      'wsrv.nl',
+      'images.unsplash.com',
+    ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.supabase.co',
+      },
+      {
+        protocol: 'https',
+        hostname: 'wsrv.nl',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
   async redirects() {
     return [
@@ -32,4 +51,3 @@ const nextConfig = {
 }
 
 export default nextConfig;
-
