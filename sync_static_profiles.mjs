@@ -35,7 +35,10 @@ function transformUrl(url) {
 
 async function run() {
   console.log('Fetching profiles from Supabase...');
-  const { data: profiles, error } = await supabase.from('profiles').select('*');
+  const { data: profiles, error } = await supabase
+    .from('profiles')
+    .select('*')
+    .order('created_at', { ascending: false });
   
   if (error) {
     console.error('Error fetching profiles:', error);
@@ -53,8 +56,8 @@ async function run() {
     complexion: p.complexion || undefined,
     location: p.location,
     rating: Number(p.rating) || 4.5,
-    profileImage: transformUrl(p.profile_image),
-    images: (p.images || []).map(transformUrl),
+    profileImage: transformUrl(p.profile_image || (p.images && p.images.length > 0 ? p.images[0] : null)),
+    images: (p.images && p.images.length > 0) ? p.images.map(transformUrl) : [transformUrl(p.profile_image)],
     shortBio: p.short_bio || "",
     description: p.description || "",
     phone: p.phone || undefined,
@@ -68,12 +71,15 @@ async function run() {
     isArchived: p.is_archived || false,
     isVip: p.is_vip || false,
     isPremium: p.is_premium || false,
+    isAd: p.is_ad || false,
+    isVerified: p.is_verified || false,
+    adImages: (p.ad_images || []).map(transformUrl),
   }));
 
   const content = `import { ProfileType } from "@/types/profile";\n\nexport const staticProfiles: ProfileType[] = ${JSON.stringify(transformedProfiles, null, 2)};\n`;
 
   fs.writeFileSync(OUTPUT_FILE, content);
-  console.log(`✅ Local database backup updated successfully at ${OUTPUT_FILE}`);
+  console.log(`âœ… Local database backup updated successfully at ${OUTPUT_FILE} (${transformedProfiles.length} profiles)`);
 }
 
 run().catch(console.error);
