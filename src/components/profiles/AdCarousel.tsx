@@ -109,28 +109,30 @@ export const AdCarousel = ({ profiles }: AdCarouselProps) => {
                 className="w-full"
               >
                 <div className="group block relative w-full rounded-2xl overflow-hidden border border-pink-500/25 bg-gradient-to-br from-gray-950 via-gray-900 to-black hover:border-pink-500/60 shadow-[0_0_15px_-3px_rgba(236,72,153,0.15)] transition-all">
-                  {/* Poster Banner with Ambient Backdrop (Uncropped) */}
-                  <Link href={`/profile/${item.slug}`} className="block relative overflow-hidden bg-black flex items-center justify-center p-2.5 min-h-[190px]">
+                  {/* Poster Banner - Zoomed & Full Impact */}
+                  <Link href={`/profile/${item.slug}`} className="block relative overflow-hidden bg-black flex items-center justify-center min-h-[225px] sm:min-h-[250px]">
                     <div
-                      className="absolute inset-0 bg-cover bg-center opacity-30 blur-md scale-110"
+                      className="absolute inset-0 bg-cover bg-center opacity-40 blur-md scale-125"
                       style={{ backgroundImage: `url('${item.image}')` }}
                     />
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="relative z-10 max-h-48 w-auto max-w-full rounded-xl object-contain shadow-2xl group-hover:scale-105 transition-transform duration-500 ease-out"
+                      className="relative z-10 w-full h-[225px] sm:h-[250px] object-cover object-center shadow-2xl group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
-                    <span className="absolute top-2 left-2 z-20 px-2 py-0.5 text-[9px] font-black uppercase tracking-wider bg-pink-600 text-white rounded-full shadow-md flex items-center gap-1">
+                    <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
+                    
+                    <span className="absolute top-2.5 left-2.5 z-20 px-2.5 py-1 text-[9px] font-black uppercase tracking-wider bg-pink-600 text-white rounded-full shadow-lg flex items-center gap-1">
                       <Sparkles className="w-2.5 h-2.5" /> FEATURED SPA
                     </span>
-                    <span className="absolute top-2 right-2 z-20 px-2 py-0.5 text-[9px] font-bold text-gray-200 bg-black/60 backdrop-blur-md rounded-full border border-white/10 flex items-center gap-1">
+                    <span className="absolute top-2.5 right-2.5 z-20 px-2.5 py-1 text-[9px] font-bold text-gray-100 bg-black/70 backdrop-blur-md rounded-full border border-white/10 flex items-center gap-1">
                       <MapPin className="w-2.5 h-2.5 text-pink-400" />
                       {item.location}
                     </span>
                   </Link>
 
                   {/* Card Info & Action Bar */}
-                  <div className="p-3.5 border-t border-gray-800/80 bg-black/40">
+                  <div className="p-3.5 border-t border-gray-800/80 bg-black/50">
                     <Link href={`/profile/${item.slug}`} className="block">
                       <h4 className="text-base font-black text-white group-hover:text-pink-400 transition-colors">
                         {item.name}
