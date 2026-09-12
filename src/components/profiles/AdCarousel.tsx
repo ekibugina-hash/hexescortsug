@@ -14,18 +14,31 @@ export const AdCarousel = ({ profiles }: AdCarouselProps) => {
   // Only profiles explicitly marked as ads AND with manually uploaded ad images
   const adProfiles = profiles.filter(p => p.isAd && p.adImages && p.adImages.length > 0);
 
+  // Helper to format phone to WhatsApp international format (Uganda 256)
+  const toWhatsAppNumber = (num?: string) => {
+    if (!num) return "";
+    const cleaned = num.replace(/[\s\(\)\-+]/g, "");
+    if (cleaned.startsWith("256")) return cleaned;
+    if (cleaned.startsWith("0")) return "256" + cleaned.slice(1);
+    return "256" + cleaned;
+  };
+
   // Collect ONLY the manually uploaded ad images
   const adItems = adProfiles.flatMap(p =>
-    (p.adImages || []).map(img => ({
-      id: p.id,
-      name: p.name,
-      image: img,
-      slug: slugify(p.name),
-      location: p.location || "Kampala",
-      description: p.description || p.shortBio || "Experience premier relaxation, skilled massage therapies, and royal pampering in a serene private setting.",
-      services: p.services && p.services.length > 0 ? p.services : ["Full Body Massage", "Sensual Care", "Private Suites"],
-      phone: p.phone || p.whatsapp,
-    }))
+    (p.adImages || []).map(img => {
+      const waNumber = toWhatsAppNumber(p.whatsapp || p.phone);
+      return {
+        id: p.id,
+        name: p.name,
+        image: img,
+        slug: slugify(p.name),
+        location: p.location || "Kampala",
+        description: p.description || p.shortBio || "Experience premier relaxation, skilled massage therapies, and royal pampering in a serene private setting.",
+        services: p.services && p.services.length > 0 ? p.services : ["Full Body Massage", "Sensual Care", "Private Suites"],
+        phone: p.phone || p.whatsapp,
+        waUrl: waNumber ? `https://wa.me/${waNumber}?text=${encodeURIComponent(`Hi ${p.name}, I saw your spa ad on https://www.hexescortsug.com`)}` : null,
+      };
+    })
   );
 
   if (adItems.length === 0) return null;
@@ -95,12 +108,9 @@ export const AdCarousel = ({ profiles }: AdCarouselProps) => {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: idx === 0 ? 0.05 : 0 }}
                 className="w-full"
               >
-                <Link
-                  href={`/profile/${item.slug}`}
-                  className="group block relative w-full rounded-2xl overflow-hidden border border-pink-500/25 bg-gradient-to-br from-gray-950 via-gray-900 to-black hover:border-pink-500/60 shadow-[0_0_15px_-3px_rgba(236,72,153,0.15)] active:scale-[0.99] transition-all"
-                >
+                <div className="group block relative w-full rounded-2xl overflow-hidden border border-pink-500/25 bg-gradient-to-br from-gray-950 via-gray-900 to-black hover:border-pink-500/60 shadow-[0_0_15px_-3px_rgba(236,72,153,0.15)] transition-all">
                   {/* Poster Banner with Ambient Backdrop (Uncropped) */}
-                  <div className="relative overflow-hidden bg-black flex items-center justify-center p-2.5 min-h-[190px]">
+                  <Link href={`/profile/${item.slug}`} className="block relative overflow-hidden bg-black flex items-center justify-center p-2.5 min-h-[190px]">
                     <div
                       className="absolute inset-0 bg-cover bg-center opacity-30 blur-md scale-110"
                       style={{ backgroundImage: `url('${item.image}')` }}
@@ -117,27 +127,51 @@ export const AdCarousel = ({ profiles }: AdCarouselProps) => {
                       <MapPin className="w-2.5 h-2.5 text-pink-400" />
                       {item.location}
                     </span>
-                  </div>
+                  </Link>
 
-                  {/* Card Info Footer */}
+                  {/* Card Info & WhatsApp Action Bar */}
                   <div className="p-3.5 border-t border-gray-800/80 bg-black/40">
-                    <h4 className="text-base font-black text-white group-hover:text-pink-400 transition-colors">
-                      {item.name}
-                    </h4>
-                    <p className="text-[11px] text-gray-300 mt-1 line-clamp-2 leading-relaxed">
-                      {item.description}
-                    </p>
-                    <div className="flex items-center justify-between mt-3 pt-2 border-t border-gray-900">
-                      <span className="text-[10px] text-pink-400 font-bold flex items-center gap-1">
-                        <MessageCircle className="w-3 h-3" />
-                        Direct WhatsApp
-                      </span>
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-pink-600 to-rose-600 text-white text-[10px] font-bold rounded-lg shadow">
-                        View Spa <ArrowRight className="w-2.5 h-2.5" />
-                      </span>
+                    <Link href={`/profile/${item.slug}`} className="block">
+                      <h4 className="text-base font-black text-white group-hover:text-pink-400 transition-colors">
+                        {item.name}
+                      </h4>
+                      <p className="text-[11px] text-gray-300 mt-1 line-clamp-2 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </Link>
+
+                    {/* Action Buttons Row */}
+                    <div className="flex items-center gap-2 mt-3 pt-2.5 border-t border-gray-900">
+                      {/* Direct Green WhatsApp Button */}
+                      {item.waUrl ? (
+                        <a
+                          href={item.waUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-[#25D366] hover:bg-[#20bd5a] active:scale-95 text-white text-[11px] font-black rounded-xl shadow-lg shadow-green-500/25 transition-all"
+                        >
+                          <MessageCircle className="w-4 h-4 fill-white text-[#25D366]" />
+                          WhatsApp Direct
+                        </a>
+                      ) : (
+                        <Link
+                          href={`/profile/${item.slug}`}
+                          className="flex-1 inline-flex items-center justify-center gap-1 px-3 py-2 bg-pink-600/20 text-pink-400 border border-pink-500/30 text-[11px] font-bold rounded-xl"
+                        >
+                          View Details
+                        </Link>
+                      )}
+
+                      {/* View Spa Profile Link */}
+                      <Link
+                        href={`/profile/${item.slug}`}
+                        className="inline-flex items-center justify-center gap-1 px-3 py-2 bg-white/5 hover:bg-white/10 text-gray-200 text-[11px] font-bold rounded-xl border border-white/10 transition-colors"
+                      >
+                        Profile <ArrowRight className="w-3 h-3" />
+                      </Link>
                     </div>
                   </div>
-                </Link>
+                </div>
               </motion.div>
             );
           })}
