@@ -63,8 +63,8 @@ export default async function EscortsInLocationPage({ params }: Props) {
   // If suburb exists, we pass it to the fetcher, else just city
   const locationProfiles = await fetchProfilesByLocation(city);
 
-  // Fresh seed for client-side shuffling
-  const seed = Math.random().toString(36).substring(2, 10);
+  // Deterministic seed per 1-hour block for location pages so Next.js ISR can properly cache
+  const seed = Math.floor(Date.now() / (1000 * 3600)).toString(36);
 
   // Generate FAQ Schema for Google Rich Snippets
   const faqSchema = {
