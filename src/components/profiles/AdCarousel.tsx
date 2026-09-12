@@ -64,7 +64,7 @@ export const AdCarousel = ({ profiles }: AdCarouselProps) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent flex flex-col justify-end p-3 lg:p-4">
                 <span className="text-[10px] font-black uppercase text-pink-400 mb-1 flex items-center gap-1">
-                  <Sparkles className="w-3 h-3" /> Featured Spa
+                  <Sparkles className="w-3 h-3" /> FEATURED SPA
                 </span>
                 <span className="text-white font-bold text-sm lg:text-base drop-shadow-md group-hover:text-pink-300 transition-colors">
                   {item.name}
@@ -86,7 +86,7 @@ export const AdCarousel = ({ profiles }: AdCarouselProps) => {
             <span className="inline-block w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
             <h3 className="text-[11px] font-extrabold uppercase tracking-widest text-pink-400 flex items-center gap-1">
               <Sparkles className="w-3 h-3" />
-              Featured Spas & Massage
+              FEATURED SPAS & MASSAGE
             </h3>
           </div>
           <span className="text-[9px] text-gray-400 uppercase tracking-wider font-semibold">
@@ -120,16 +120,16 @@ export const AdCarousel = ({ profiles }: AdCarouselProps) => {
                       alt={item.name}
                       className="relative z-10 max-h-48 w-auto max-w-full rounded-xl object-contain shadow-2xl group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
-                    <span className="absolute top-2 left-2 z-20 px-2 py-0.5 text-[9px] font-black uppercase tracking-wider bg-pink-600 text-white rounded-full shadow-md">
-                      âœ¨ Featured Spa
+                    <span className="absolute top-2 left-2 z-20 px-2 py-0.5 text-[9px] font-black uppercase tracking-wider bg-pink-600 text-white rounded-full shadow-md flex items-center gap-1">
+                      <Sparkles className="w-2.5 h-2.5" /> FEATURED SPA
                     </span>
-                    <span className="absolute top-2 right-2 z-20 px-2 py-0.5 text-[9px] font-bold text-gray-200 bg-black/60 backdrop-blur-md rounded-full border border-white/10 flex items-center gap-0.5">
+                    <span className="absolute top-2 right-2 z-20 px-2 py-0.5 text-[9px] font-bold text-gray-200 bg-black/60 backdrop-blur-md rounded-full border border-white/10 flex items-center gap-1">
                       <MapPin className="w-2.5 h-2.5 text-pink-400" />
                       {item.location}
                     </span>
                   </Link>
 
-                  {/* Card Info & WhatsApp Action Bar */}
+                  {/* Card Info & Action Bar */}
                   <div className="p-3.5 border-t border-gray-800/80 bg-black/40">
                     <Link href={`/profile/${item.slug}`} className="block">
                       <h4 className="text-base font-black text-white group-hover:text-pink-400 transition-colors">
@@ -140,9 +140,9 @@ export const AdCarousel = ({ profiles }: AdCarouselProps) => {
                       </p>
                     </Link>
 
-                    {/* Action Buttons Row */}
+                    {/* Action Buttons Row: WhatsApp Left, View Spa Right */}
                     <div className="flex items-center gap-2 mt-3 pt-2.5 border-t border-gray-900">
-                      {/* Direct Green WhatsApp Button */}
+                      {/* Left Side: Green WhatsApp Button */}
                       {item.waUrl ? (
                         <a
                           href={item.waUrl}
@@ -151,23 +151,18 @@ export const AdCarousel = ({ profiles }: AdCarouselProps) => {
                           className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-[#25D366] hover:bg-[#20bd5a] active:scale-95 text-white text-[11px] font-black rounded-xl shadow-lg shadow-green-500/25 transition-all"
                         >
                           <MessageCircle className="w-4 h-4 fill-white text-[#25D366]" />
-                          WhatsApp Direct
+                          WhatsApp
                         </a>
                       ) : (
-                        <Link
-                          href={`/profile/${item.slug}`}
-                          className="flex-1 inline-flex items-center justify-center gap-1 px-3 py-2 bg-pink-600/20 text-pink-400 border border-pink-500/30 text-[11px] font-bold rounded-xl"
-                        >
-                          View Details
-                        </Link>
+                        <div className="flex-1" />
                       )}
 
-                      {/* View Spa Profile Link */}
+                      {/* Right Side: Pink View Spa Button */}
                       <Link
                         href={`/profile/${item.slug}`}
-                        className="inline-flex items-center justify-center gap-1 px-3 py-2 bg-white/5 hover:bg-white/10 text-gray-200 text-[11px] font-bold rounded-xl border border-white/10 transition-colors"
+                        className="flex-1 inline-flex items-center justify-center gap-1 px-3 py-2 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 active:scale-95 text-white text-[11px] font-bold rounded-xl shadow-md transition-all"
                       >
-                        Profile <ArrowRight className="w-3 h-3" />
+                        View Spa <ArrowRight className="w-3 h-3" />
                       </Link>
                     </div>
                   </div>
