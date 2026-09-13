@@ -8,6 +8,9 @@ import { unstable_cache } from 'next/cache';
 // Set this to false to use live database updates while serving images locally to save quota
 const FORCE_STATIC_DATA = false;
 
+// Supabase project storage base URL (for converting local /storage/ paths to full URLs)
+const SUPABASE_STORAGE_BASE = "https://dkyikirsvpauhbexbhvu.supabase.co/storage/v1/object/public";
+
 export function createSeededRand(s: string) {
   let h = 0;
   for (let i = 0; i < s.length; i++) h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
@@ -38,30 +41,55 @@ export function sortAndShuffleProfiles(profiles: ProfileType[], seed?: string): 
   return [...shuffleArray(pinned, rand), ...shuffleArray(regular, rand)];
 }
 
-function mapDbProfile(p: any): ProfileType {
-  // Transform storage URLs to wsrv.nl CDN proxy or keep local static paths
-  const transformUrl = (url: string | null | undefined): string => {
-    if (!url) return "/placeholder.svg";
-    
-    // If it's already a local static path, keep it
-    if (url.startsWith('/storage/') || url.startsWith('/') || !url.includes('.supabase.co')) {
-      return url;
-    }
-    
-    // For all Supabase storage URLs, route through wsrv.nl image CDN proxy
-    // This guarantees 100% of images (both newly added and existing) always load,
-    // while offloading Vercel serverless CPU and caching Supabase storage on CDN
-    if (url.includes("/storage/v1/object/public/")) {
-      const isImage = /\.(jpg|jpeg|png|webp|jfif|avif)$/i.test(url);
-      if (isImage) {
-        return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=800&output=webp&q=80`;
-      }
-      return url;
-    }
-    
-    return url;
-  };
+/**
+ * Transforms ANY image URL to a wsrv.nl-proxied URL for reliable, CDN-cached delivery.
+ *
+ * Handles three cases:
+ *  1. Full Supabase storage URLs  → wsrv.nl proxy
+ *  2. Local /storage/... paths    → convert to full Supabase URL → wsrv.nl proxy
+ *  3. Everything else             → pass through unchanged
+ *
+ * This ensures images NEVER depend on static files being present in /public/storage/,
+ * which was the root cause of recurring broken-image incidents.
+ */
+function transformUrl(url: string | null | undefined): string {
+  if (!url) return "/placeholder.svg";
 
+  const isImage = /\.(jpg|jpeg|png|webp|jfif|avif)$/i.test(url);
+
+  // Case 1: Full Supabase storage URL — route through wsrv.nl
+  if (url.includes(".supabase.co") && url.includes("/storage/v1/object/public/")) {
+    if (isImage) {
+      return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=800&output=webp&q=80`;
+    }
+    return url; // videos etc — pass through
+  }
+
+  // Case 2: Local /storage/profile-images/... path — convert to Supabase URL then wsrv.nl
+  if (url.startsWith("/storage/profile-images/")) {
+    const fileName = url.replace("/storage/profile-images/", "");
+    const supabaseUrl = `${SUPABASE_STORAGE_BASE}/profile-images/${fileName}`;
+    if (isImage) {
+      return `https://wsrv.nl/?url=${encodeURIComponent(supabaseUrl)}&w=800&output=webp&q=80`;
+    }
+    return supabaseUrl; // non-image files
+  }
+
+  // Case 3: /storage/avatars/... path
+  if (url.startsWith("/storage/avatars/")) {
+    const fileName = url.replace("/storage/avatars/", "");
+    const supabaseUrl = `${SUPABASE_STORAGE_BASE}/avatars/${fileName}`;
+    if (isImage) {
+      return `https://wsrv.nl/?url=${encodeURIComponent(supabaseUrl)}&w=800&output=webp&q=80`;
+    }
+    return supabaseUrl;
+  }
+
+  // Case 4: Anything else (placeholder, external URLs, etc.) — pass through
+  return url;
+}
+
+function mapDbProfile(p: any): ProfileType {
   return {
     id: String(p.id),
     name: p.name,
