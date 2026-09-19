@@ -8,7 +8,7 @@ import { ProfileType } from "@/types/profile";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { AdCarousel } from "@/components/profiles/AdCarousel";
-import { Crown } from "lucide-react";
+import { Crown, ChevronDown } from "lucide-react";
 
 const PAGE_SIZE = 12;
 
@@ -32,6 +32,7 @@ interface HomePageProps {
 const HomePage = ({ initialProfiles = [], shuffleSeed }: HomePageProps) => {
   const [isMounted, setIsMounted] = useState(false);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const [showOtherEscorts, setShowOtherEscorts] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -112,20 +113,39 @@ const HomePage = ({ initialProfiles = [], shuffleSeed }: HomePageProps) => {
               </h2>
               <div className="h-0.5 w-24 bg-gray-700 mt-1" />
             </div>
-            <ProfileGrid
-              profiles={visibleOrdinary}
-              loading={isInitialLoading}
-            />
 
-            {!isInitialLoading && hasMore && (
-              <div className="flex justify-center pt-8 pb-4">
+            {!showOtherEscorts ? (
+              <div className="flex flex-col items-center justify-center py-10 px-4 bg-gradient-to-b from-gray-900/50 via-gray-900/30 to-black/60 rounded-2xl border border-gray-800 text-center space-y-4 shadow-xl">
+                <p className="text-xs sm:text-sm text-gray-400 max-w-md">
+                  Looking for more verified profiles? Tap below to explore standard escort listings.
+                </p>
                 <Button
-                  onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
-                  className="bg-gradient-to-r from-pink-600 to-pink-500 hover:from-pink-700 hover:to-pink-600 text-white px-8 py-2 rounded-full font-semibold shadow-[0_0_18px_4px_rgba(236,72,153,0.55)] hover:shadow-[0_0_28px_8px_rgba(236,72,153,0.75)] transition-shadow duration-300"
+                  onClick={() => setShowOtherEscorts(true)}
+                  size="lg"
+                  className="bg-gradient-to-r from-[#db0061] via-[#ff1493] to-[#db0061] hover:from-[#ff1493] hover:to-[#db0061] text-white font-black text-sm sm:text-base px-8 py-6 rounded-full shadow-[0_4px_20px_rgba(255,20,147,0.4)] hover:shadow-[0_4px_30px_rgba(255,20,147,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2.5 cursor-pointer uppercase tracking-wider"
                 >
-                  Load More Profiles
+                  <span>Other Escorts</span>
+                  <ChevronDown className="w-5 h-5 animate-bounce" />
                 </Button>
               </div>
+            ) : (
+              <>
+                <ProfileGrid
+                  profiles={visibleOrdinary}
+                  loading={isInitialLoading}
+                />
+
+                {!isInitialLoading && hasMore && (
+                  <div className="flex justify-center pt-8 pb-4">
+                    <Button
+                      onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
+                      className="bg-gradient-to-r from-pink-600 to-pink-500 hover:from-pink-700 hover:to-pink-600 text-white px-8 py-2 rounded-full font-semibold shadow-[0_0_18px_4px_rgba(236,72,153,0.55)] hover:shadow-[0_0_28px_8px_rgba(236,72,153,0.75)] transition-shadow duration-300"
+                    >
+                      Load More Profiles
+                    </Button>
+                  </div>
+                )}
+              </>
             )}
           </div>
         </div>
