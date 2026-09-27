@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CheckCircle, Loader2, ChevronRight, Star, Crown, Video, Phone } from "lucide-react";
+import { CheckCircle, Loader2, ChevronRight, Crown, Phone } from "lucide-react";
 import PaymentModal from "@/components/escort-apply/PaymentModal";
 import { createClient } from "@supabase/supabase-js";
 
@@ -17,11 +17,11 @@ const supabase = createClient(
 );
 
 type Screen = "plan" | "form" | "success";
-type Plan = "ordinary" | "vip";
+type Plan = "monthly" | "vip";
 
 const BecomeEscortPage = () => {
   const [screen, setScreen] = useState<Screen>("plan");
-  const [selectedPlan, setSelectedPlan] = useState<Plan>("ordinary");
+  const [selectedPlan, setSelectedPlan] = useState<Plan>("monthly");
   const [applicationId, setApplicationId] = useState<string | null>(null);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -68,10 +68,8 @@ const BecomeEscortPage = () => {
 
   // Save to localStorage whenever form or plan changes
   useEffect(() => {
-    // Don't save if on success screen
     if (screen === "success") return;
     
-    // Check if form has any content before saving
     const hasContent = form.name || form.phone || form.profileImage || form.images.length > 0;
     if (hasContent) {
       localStorage.setItem("escort_application_draft", JSON.stringify({ 
@@ -198,7 +196,8 @@ const BecomeEscortPage = () => {
     setScreen("success");
   };
 
-  const PRICE = selectedPlan === "vip" ? 40000 : 20000;
+  const PRICE = selectedPlan === "monthly" ? 30000 : 10000;
+  const PLAN_TITLE = selectedPlan === "monthly" ? "Full Month Listing" : "VIP Boost";
 
   // --- SUCCESS SCREEN ---
   if (screen === "success") {
@@ -212,7 +211,7 @@ const BecomeEscortPage = () => {
           <h1 className="text-2xl font-bold text-white mb-3">🎉 Application Submitted!</h1>
           <p className="text-gray-300 mb-2">
             Your payment is being verified. Once confirmed, your profile will go live in{" "}
-            <strong className="text-pink-400">5–10 minutes</strong>.
+            <strong className="text-pink-400">5-10 minutes</strong>.
           </p>
           <p className="text-gray-400 text-sm mb-8">
             You'll receive a WhatsApp message on{" "}
@@ -247,7 +246,7 @@ const BecomeEscortPage = () => {
         <PaymentModal
           applicationId={applicationId}
           planAmount={PRICE}
-          planName={selectedPlan === "vip" ? "VIP" : "Ordinary"}
+          planName={PLAN_TITLE}
           onVerified={handlePaymentVerified}
           onClose={() => setShowPaymentModal(false)}
         />
@@ -256,135 +255,209 @@ const BecomeEscortPage = () => {
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-white mb-1">Become an Escort</h1>
-          <p className="text-gray-400 text-sm">Pick a plan and create your profile to go live in 5–10 minutes.</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">Become an Escort</h1>
+          <p className="text-gray-400 text-sm max-w-xl leading-relaxed">
+            Select an advertising plan below and create your profile. Your listing goes live in 5-10 minutes after verification.
+          </p>
         </div>
 
         {/* Plan Selection */}
-        <div className="grid sm:grid-cols-2 gap-4 mb-8">
-          {/* Ordinary */}
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          {/* Full Month Plan */}
           <button
-            onClick={() => setSelectedPlan("ordinary")}
-            className={`text-left p-5 rounded-xl border-2 transition-all ${
-              selectedPlan === "ordinary"
-                ? "border-pink-500 bg-pink-500/10"
-                : "border-gray-700 bg-gray-900/40 hover:border-gray-500"
+            type="button"
+            onClick={() => setSelectedPlan("monthly")}
+            className={`text-left p-6 rounded-2xl border-2 transition-all relative overflow-hidden flex flex-col justify-between ${
+              selectedPlan === "monthly"
+                ? "border-pink-500 bg-gradient-to-b from-pink-500/15 via-pink-500/5 to-gray-900/60 shadow-[0_0_25px_rgba(242,54,123,0.15)]"
+                : "border-gray-800 bg-gray-900/40 hover:border-gray-700"
             }`}
           >
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center gap-2">
-                <Star className="h-5 w-5 text-pink-400" />
-                <span className="font-bold text-white">Ordinary</span>
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30 uppercase tracking-wider">
+                  Monthly Plan
+                </span>
+                {selectedPlan === "monthly" && (
+                  <CheckCircle className="h-6 w-6 text-pink-500" />
+                )}
               </div>
-              {selectedPlan === "ordinary" && (
-                <CheckCircle className="h-5 w-5 text-pink-400" />
-              )}
+
+              <h2 className="text-xl font-bold text-white mb-1">Full Month</h2>
+              
+              <div className="text-3xl font-black text-pink-400 mb-4">
+                30,000 <span className="text-sm font-normal text-gray-400">shs / month</span>
+              </div>
+
+              {/* 4-Week Timeline Indicator */}
+              <div className="grid grid-cols-4 gap-1.5 mb-4 p-2 bg-black/50 rounded-xl border border-gray-800 text-center">
+                <div className="bg-yellow-400 text-black py-1.5 px-1 rounded-lg font-bold text-xs">
+                  Week 1
+                  <span className="block text-[9px] font-black uppercase tracking-tighter">👑 VIP</span>
+                </div>
+                <div className="bg-pink-500/20 text-pink-300 py-1.5 px-1 rounded-lg font-semibold text-xs border border-pink-500/20">
+                  Week 2
+                  <span className="block text-[9px] text-gray-400 font-normal">Ordinary</span>
+                </div>
+                <div className="bg-pink-500/20 text-pink-300 py-1.5 px-1 rounded-lg font-semibold text-xs border border-pink-500/20">
+                  Week 3
+                  <span className="block text-[9px] text-gray-400 font-normal">Ordinary</span>
+                </div>
+                <div className="bg-pink-500/20 text-pink-300 py-1.5 px-1 rounded-lg font-semibold text-xs border border-pink-500/20">
+                  Week 4
+                  <span className="block text-[9px] text-gray-400 font-normal">Ordinary</span>
+                </div>
+              </div>
+
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                Your first week runs as a <strong className="text-yellow-400">VIP listing</strong> with top placement and a gold badge for maximum client calls. The remaining 3 weeks continue as a standard listing, keeping you visible and searchable all month.
+              </p>
             </div>
-            <p className="text-2xl font-bold text-white mb-1">
-              UGX 20,000<span className="text-sm font-normal text-gray-400"> / week</span>
-            </p>
-            <ul className="text-gray-400 text-sm space-y-1 mt-2">
-              <li>✓ Profile listed on the site</li>
-              <li>✓ Clients can contact you directly</li>
-              <li>✓ Live in 5–10 minutes</li>
-            </ul>
+
+            <div className="mt-4 pt-3 border-t border-gray-800 text-xs text-gray-400">
+              💡 Best for models wanting a strong launch push, then steady visibility for the rest of the month.
+            </div>
           </button>
 
-          {/* VIP */}
+          {/* VIP Boost Plan */}
           <button
+            type="button"
             onClick={() => setSelectedPlan("vip")}
-            className={`text-left p-5 rounded-xl border-2 transition-all relative overflow-hidden ${
+            className={`text-left p-6 rounded-2xl border-2 transition-all relative overflow-hidden flex flex-col justify-between ${
               selectedPlan === "vip"
-                ? "border-yellow-400 bg-yellow-400/10"
-                : "border-gray-700 bg-gray-900/40 hover:border-yellow-400/50"
+                ? "border-yellow-400 bg-gradient-to-b from-yellow-400/15 via-yellow-400/5 to-gray-900/60 shadow-[0_0_25px_rgba(232,185,61,0.15)]"
+                : "border-gray-800 bg-gray-900/40 hover:border-yellow-400/30"
             }`}
           >
-            <div className="absolute top-0 right-0 bg-yellow-400 text-black text-[10px] font-bold px-2 py-0.5 rounded-bl-lg">
-              POPULAR
-            </div>
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center gap-2">
-                <Crown className="h-5 w-5 text-yellow-400" />
-                <span className="font-bold text-white">VIP</span>
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-yellow-400/20 text-yellow-400 border border-yellow-400/30 uppercase tracking-wider">
+                  Weekly Add-On
+                </span>
+                {selectedPlan === "vip" && (
+                  <CheckCircle className="h-6 w-6 text-yellow-400" />
+                )}
               </div>
-              {selectedPlan === "vip" && (
-                <CheckCircle className="h-5 w-5 text-yellow-400" />
-              )}
+
+              <h2 className="text-xl font-bold text-white mb-1">VIP Boost</h2>
+              
+              <div className="text-3xl font-black text-yellow-400 mb-4">
+                10,000 <span className="text-sm font-normal text-gray-400">shs / week</span>
+              </div>
+
+              <div className="p-3 bg-black/50 rounded-xl border border-yellow-400/20 mb-4 flex items-center gap-3">
+                <Crown className="h-7 w-7 text-yellow-400 shrink-0" />
+                <div className="text-xs text-gray-300">
+                  <strong className="text-yellow-400 block text-sm">Top Homepage Placement</strong>
+                  7 full days of VIP badge & priority positioning
+                </div>
+              </div>
+
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                Add VIP placement to any of your ordinary weeks for 10,000 shs each. Pay only for the weeks you want extra visibility and maximum client inquiries.
+              </p>
             </div>
-            <p className="text-2xl font-bold text-white mb-1">
-              UGX 40,000<span className="text-sm font-normal text-gray-400"> / week</span>
-            </p>
-            <ul className="text-gray-400 text-sm space-y-1 mt-2">
-              <li>✓ <strong className="text-yellow-400">Featured at the top</strong> of search</li>
-              <li>✓ Gold VIP badge on your profile</li>
-              <li>✓ Get 3× more client views</li>
-              <li>✓ Live in 5–10 minutes</li>
-            </ul>
+
+            <div className="mt-4 pt-3 border-t border-gray-800 text-xs text-gray-400">
+              💡 Best for models wanting to time their VIP boost around a busy weekend or special offer.
+            </div>
           </button>
         </div>
 
-        {/* Create Profile Button */}
-        {!showForm && (
-          <div className="flex flex-col items-center justify-center py-12 space-y-4">
-             <Button 
-               size="lg" 
-               className="bg-pink-600 hover:bg-pink-700 px-12 py-8 text-xl font-bold rounded-2xl shadow-xl shadow-pink-600/20 w-full sm:w-auto"
-               onClick={() => setShowForm(true)}
-             >
-               Create a Profile
-             </Button>
-             <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold">Step 2 of 3</p>
+        {/* Toggle Form / Plan Button */}
+        {!showForm ? (
+          <div className="text-center bg-gray-900/60 border border-gray-800 rounded-2xl p-6">
+            <div className={`p-4 rounded-xl border mb-6 text-sm ${
+              selectedPlan === "monthly"
+                ? "bg-pink-500/10 border-pink-500/30 text-pink-300"
+                : "bg-yellow-400/10 border-yellow-400/30 text-yellow-300"
+            }`}>
+              Selected Plan: <strong className="text-white font-bold">{PLAN_TITLE}</strong> –{" "}
+              <strong className="text-white font-bold">UGX {PRICE.toLocaleString()}</strong>
+            </div>
+
+            <Button
+              className="w-full sm:w-auto px-10 py-6 text-base bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-xl shadow-lg shadow-pink-600/20 transition-all"
+              onClick={() => setShowForm(true)}
+            >
+              Fill Out Profile Details <ChevronRight className="ml-2 h-5 w-5" />
+            </Button>
           </div>
-        )}
+        ) : (
+        /* Form Card */
+        <Card className="bg-gray-900/80 border-gray-800 text-white shadow-2xl">
+          <CardContent className="p-6">
+            <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-800">
+              <div>
+                <h2 className="text-lg font-bold text-white">Your Profile Details</h2>
+                <p className="text-xs text-gray-400">Fill in your information to get listed.</p>
+              </div>
+              <button
+                onClick={() => setShowForm(false)}
+                className="text-xs text-pink-400 hover:text-pink-300 underline"
+              >
+                Change Plan ({PLAN_TITLE})
+              </button>
+            </div>
 
-        {/* Profile Form — only shown after clicking button */}
-        {showForm && (
-        <Card className="border-gray-700 bg-gray-900/60 animate-in fade-in slide-in-from-bottom-4 duration-500">
-          <CardContent className="pt-6">
-            <h2 className="text-lg font-bold text-white mb-5">Your Profile Details</h2>
-
-            <div className="space-y-4">
-              {/* Media Uploads */}
-              <div className="space-y-4 pb-4 border-b border-gray-700">
-                <div className="space-y-2">
-                  <Label>Profile Image *</Label>
-                  {form.profileImage && (
-                    <img src={form.profileImage} alt="Profile" className="w-24 h-24 rounded-full object-cover" />
+            <div className="space-y-6">
+              {/* Image Uploads */}
+              <div className="space-y-3">
+                <Label className="text-white font-medium">Main Profile Photo *</Label>
+                <div className="flex items-center gap-4">
+                  {form.profileImage ? (
+                    <img src={form.profileImage} alt="Profile" className="w-20 h-20 rounded-xl object-cover border-2 border-pink-500" />
+                  ) : (
+                    <div className="w-20 h-20 rounded-xl bg-gray-800 border-2 border-dashed border-gray-600 flex items-center justify-center text-gray-500 text-xs">
+                      No Photo
+                    </div>
                   )}
                   <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={(e) => handleImageUpload(e, "profile")} />
-                  <Button className="bg-pink-600 hover:bg-pink-700 text-white" size="sm" onClick={() => fileInputRef.current?.click()} disabled={uploading}>
-                    {uploading ? "Uploading..." : "Upload Profile Photo"}
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="border-pink-500/50 text-pink-400 hover:bg-pink-500/10"
+                    onClick={() => fileInputRef.current?.click()}
+                    disabled={uploading}
+                  >
+                    {uploading ? "Uploading..." : form.profileImage ? "Change Main Photo" : "Upload Main Photo"}
                   </Button>
                 </div>
+              </div>
 
+              {/* Gallery Photos */}
+              <div className="space-y-3">
+                <Label className="text-white font-medium">Gallery Photos (Optional)</Label>
                 <div className="space-y-2">
-                  <Label>Gallery Images</Label>
                   <div className="flex flex-wrap gap-2">
                     {form.images.map((img, i) => (
                       <div key={i} className="relative">
-                        <img src={img} alt="" className="w-16 h-16 rounded object-cover" />
-                        <button onClick={() => setForm(f => ({ ...f, images: f.images.filter((_, idx) => idx !== i)}))} className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">×</button>
+                        <img src={img} className="w-16 h-16 rounded-lg object-cover" />
+                        <button onClick={() => setForm(f => ({ ...f, images: f.images.filter((_, idx) => idx !== i)}))} className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">x</button>
                       </div>
                     ))}
                   </div>
                   <input ref={galleryInputRef} type="file" accept="image/*" multiple className="hidden" onChange={(e) => handleImageUpload(e, "gallery")} />
-                  <Button className="bg-pink-600 hover:bg-pink-700 text-white" size="sm" onClick={() => galleryInputRef.current?.click()} disabled={uploading}>
-                    {uploading ? "Uploading..." : "Add Gallery Images"}
+                  <Button type="button" variant="outline" size="sm" onClick={() => galleryInputRef.current?.click()} disabled={uploading}>
+                    {uploading ? "Uploading..." : "+ Add Gallery Photos"}
                   </Button>
                 </div>
+              </div>
 
+              {/* Videos */}
+              <div className="space-y-3">
+                <Label className="text-white font-medium">Short Video Clips (Optional)</Label>
                 <div className="space-y-2">
-                  <Label className="flex items-center gap-1"><Video className="w-4 h-4" /> Videos</Label>
                   <div className="flex flex-wrap gap-2">
                     {form.videos.map((vid, i) => (
                       <div key={i} className="relative">
                         <video src={vid} className="w-24 h-16 rounded object-cover" />
-                        <button onClick={() => setForm(f => ({ ...f, videos: f.videos.filter((_, idx) => idx !== i)}))} className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">×</button>
+                        <button onClick={() => setForm(f => ({ ...f, videos: f.videos.filter((_, idx) => idx !== i)}))} className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">x</button>
                       </div>
                     ))}
                   </div>
                   <input ref={videoInputRef} type="file" accept="video/*" multiple className="hidden" onChange={handleVideoUpload} />
-                  <Button className="bg-pink-600 hover:bg-pink-700 text-white" size="sm" onClick={() => videoInputRef.current?.click()} disabled={uploading}>
+                  <Button type="button" className="bg-pink-600 hover:bg-pink-700 text-white" size="sm" onClick={() => videoInputRef.current?.click()} disabled={uploading}>
                     {uploading ? "Uploading..." : "Add Videos"}
                   </Button>
                   <p className="text-xs text-muted-foreground">Max 100MB per video. MP4, WebM, MOV supported.</p>
@@ -522,23 +595,23 @@ const BecomeEscortPage = () => {
 
               {/* Selected plan summary */}
               <div className={`p-3 rounded-lg border text-sm ${
-                selectedPlan === "vip"
-                  ? "bg-yellow-400/10 border-yellow-400/30 text-yellow-300"
-                  : "bg-pink-500/10 border-pink-500/30 text-pink-300"
+                selectedPlan === "monthly"
+                  ? "bg-pink-500/10 border-pink-500/30 text-pink-300"
+                  : "bg-yellow-400/10 border-yellow-400/30 text-yellow-300"
               }`}>
-                <strong>{selectedPlan === "vip" ? "VIP Plan" : "Ordinary Plan"}</strong> — UGX {(selectedPlan === "vip" ? 40000 : 20000).toLocaleString()} / week
-                {" · "}Goes live in <strong>5–10 minutes</strong>
+                <strong>{PLAN_TITLE}</strong> – UGX {PRICE.toLocaleString()}
+                {" · "}Goes live in <strong>5-10 minutes</strong>
               </div>
 
               <Button
-                className="w-full bg-pink-600 hover:bg-pink-700 py-6 text-base"
+                className="w-full bg-pink-600 hover:bg-pink-700 py-6 text-base font-bold"
                 onClick={handleSubmitForm}
                 disabled={loading}
               >
                 {loading ? (
                   <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Saving...</>
                 ) : (
-                  <>Continue to Payment (UGX {(PRICE).toLocaleString()}) <ChevronRight className="ml-2 h-4 w-4" /></>
+                  <>Continue to Payment (UGX {PRICE.toLocaleString()}) <ChevronRight className="ml-2 h-4 w-4" /></>
                 )}
               </Button>
 
