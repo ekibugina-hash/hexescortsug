@@ -4,20 +4,26 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CheckCircle, Loader2, Phone, X } from "lucide-react";
+import { X, CheckCircle, Loader2, Phone } from "lucide-react";
 import Image from "next/image";
 
 interface PaymentModalProps {
   applicationId: string;
-  planAmount: number;      // e.g. 20000 or 40000
-  planName: string;        // e.g. "Ordinary" or "VIP"
+  planAmount: number;
+  planName: string;
   onVerified: () => void;
   onClose: () => void;
 }
 
-const PAYMENT_NUMBER = "0765040502";
+const PAYMENT_NUMBER = "0771234567";
 
-export default function PaymentModal({ applicationId, planAmount, planName, onVerified, onClose }: PaymentModalProps) {
+export default function PaymentModal({
+  applicationId,
+  planAmount,
+  planName,
+  onVerified,
+  onClose,
+}: PaymentModalProps) {
   const [step, setStep] = useState<"choose" | "instructions" | "verify">("choose");
   const [method, setMethod] = useState<"mtn" | "airtel" | null>(null);
   const [payPhone, setPayPhone] = useState("");
@@ -71,15 +77,15 @@ export default function PaymentModal({ applicationId, planAmount, planName, onVe
           <X className="h-5 w-5" />
         </button>
 
-        {/* Step 1 – Choose Method */}
+        {/* Step 1 - Choose Method */}
         {step === "choose" && (
           <div className="text-center">
-            <div className="text-4xl mb-3">💳</div>
-            <h2 className="text-xl font-bold text-white mb-1">{planName} Plan — Payment</h2>
+            <div className="text-4xl mb-3">📱</div>
+            <h2 className="text-xl font-bold text-white mb-1">{planName} Plan - Payment</h2>
             <p className="text-gray-400 text-sm mb-1">
-              Pay <span className="text-pink-400 font-bold">UGX {planAmount.toLocaleString()}</span> per week to activate your profile.
+              Pay <span className="text-pink-400 font-bold">UGX {planAmount.toLocaleString()}</span> to activate your profile.
             </p>
-            <p className="text-gray-500 text-xs mb-6">Your profile goes live in 5–10 minutes after confirmation.</p>
+            <p className="text-gray-500 text-xs mb-6">Your profile goes live in 5-10 minutes after confirmation.</p>
             <p className="text-gray-300 text-sm mb-4">Choose your payment method:</p>
             <div className="grid grid-cols-2 gap-4">
               <button
@@ -114,12 +120,12 @@ export default function PaymentModal({ applicationId, planAmount, planName, onVe
           </div>
         )}
 
-        {/* Step 2 – Instructions */}
+        {/* Step 2 - Instructions */}
         {step === "instructions" && method && (
           <div>
             <div className={`text-center mb-4 p-3 rounded-xl ${method === "mtn" ? "bg-yellow-400/10 border border-yellow-400/30" : "bg-red-400/10 border border-red-400/30"}`}>
               <p className="font-bold text-lg text-white">{method === "mtn" ? "MTN Mobile Money" : "Airtel Money"}</p>
-              <p className="text-gray-300 text-sm">{planName} Plan · UGX {planAmount.toLocaleString()} / week</p>
+              <p className="text-gray-300 text-sm">{planName} Plan – UGX {planAmount.toLocaleString()}</p>
             </div>
 
             <div className="space-y-3 mb-6 bg-gray-800/60 rounded-xl p-4">
@@ -146,15 +152,15 @@ export default function PaymentModal({ applicationId, planAmount, planName, onVe
             </div>
 
             <Button className="w-full bg-pink-600 hover:bg-pink-700" onClick={() => setStep("verify")}>
-              I've Made the Payment →
+              I've Made the Payment
             </Button>
             <button onClick={() => setStep("choose")} className="w-full mt-2 text-sm text-gray-400 hover:text-white transition-colors">
-              ← Go back
+              Go back
             </button>
           </div>
         )}
 
-        {/* Step 3 – Verify */}
+        {/* Step 3 - Verify */}
         {step === "verify" && (
           <div>
             <div className="text-center mb-5">
@@ -194,7 +200,7 @@ export default function PaymentModal({ applicationId, planAmount, planName, onVe
                 Submit for Verification
               </Button>
               <button onClick={() => setStep("instructions")} className="w-full mt-1 text-sm text-gray-400 hover:text-white transition-colors">
-                ← Back to instructions
+                Back to instructions
               </button>
             </div>
           </div>
