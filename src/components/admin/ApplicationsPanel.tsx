@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle, XCircle, Clock, Loader2, RefreshCw, Phone, MapPin, User } from "lucide-react";
+import { CheckCircle, XCircle, Loader2, RefreshCw, Phone, MapPin, User, Crown, Zap } from "lucide-react";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -64,26 +63,63 @@ export default function ApplicationsPanel() {
   const handleApprove = async (app: Application) => {
     setActionLoading(app.id);
     try {
-      // 1. Move to live profiles table
-      const { error: insertError } = await supabase.from("profiles").insert({
-        name: app.name,
-        age: app.age,
-        location: app.location,
-        phone: app.phone,
-        whatsapp: app.whatsapp,
-        short_bio: app.short_bio,
-        body_type: app.body_type,
-        complexion: app.complexion,
-        profile_image: app.profile_image,
-        images: app.images || [],
-        videos: app.videos || [],
-        is_archived: true,
-        is_pinned: app.plan === "vip",
-        rating: 4.5,
-      });
-      if (insertError) throw insertError;
+      if (app.plan === "vip_boost") {
+        // Try to find existing profile in profiles table by phone or name
+        const { data: existing } = await supabase
+          .from("profiles")
+          .select("id")
+          .or(`phone.eq.${app.phone},name.ilike.%${app.name}%`)
+          .limit(1);
 
-      // 2. Update application status
+        if (existing && existing.length > 0) {
+          // Upgrade existing profile to VIP
+          await supabase
+            .from("profiles")
+            .update({ is_pinned: true, is_vip: true })
+            .eq("id", existing[0].id);
+        } else if (app.profile_image) {
+          // If profile_image exists, insert as live profile with VIP
+          await supabase.from("profiles").insert({
+            name: app.name,
+            age: app.age,
+            location: app.location,
+            phone: app.phone,
+            whatsapp: app.whatsapp,
+            short_bio: app.short_bio,
+            body_type: app.body_type,
+            complexion: app.complexion,
+            profile_image: app.profile_image,
+            images: app.images || [],
+            videos: app.videos || [],
+            is_archived: false,
+            is_pinned: true,
+            is_vip: true,
+            rating: 4.5,
+          });
+        }
+      } else {
+        // Full Month or Ordinary Plan: Publish new profile
+        const { error: insertError } = await supabase.from("profiles").insert({
+          name: app.name,
+          age: app.age,
+          location: app.location,
+          phone: app.phone,
+          whatsapp: app.whatsapp,
+          short_bio: app.short_bio,
+          body_type: app.body_type,
+          complexion: app.complexion,
+          profile_image: app.profile_image,
+          images: app.images || [],
+          videos: app.videos || [],
+          is_archived: false,
+          is_pinned: app.plan === "monthly" || app.plan === "vip",
+          is_vip: app.plan === "monthly" || app.plan === "vip",
+          rating: 4.5,
+        });
+        if (insertError) throw insertError;
+      }
+
+      // Update application status to approved
       await supabase
         .from("escort_applications")
         .update({ status: "approved" })
@@ -116,7 +152,7 @@ export default function ApplicationsPanel() {
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-bold text-white">Escort Applications</h2>
+        <h2 className="text-xl font-bold text-white">Escort Applications & Payments</h2>
         <Button variant="ghost" size="sm" onClick={fetchApplications} disabled={loading}>
           <RefreshCw className={`h-4 w-4 ${loading ? "animate-spin" : ""}`} />
         </Button>
@@ -151,10 +187,19 @@ export default function ApplicationsPanel() {
         <div className="space-y-3">
           {applications.map((app) => {
             const statusInfo = STATUS_LABELS[app.status] ?? { label: app.status, color: "bg-gray-500/20 text-gray-400 border-gray-500/30" };
+            const isVipBoost = app.plan === "vip_boost" || app.plan === "vip";
+            const isMonthly = app.plan === "monthly";
+
             return (
               <div
                 key={app.id}
-                className="bg-gray-800/60 border border-gray-700 rounded-xl p-4"
+                className={`border rounded-xl p-4 transition-all ${
+                  isVipBoost 
+                    ? "bg-yellow-950/20 border-yellow-500/40" 
+                    : isMonthly 
+                      ? "bg-pink-950/20 border-pink-500/40" 
+                      : "bg-gray-800/60 border-gray-700"
+                }`}
               >
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   {/* Info */}
@@ -163,56 +208,69 @@ export default function ApplicationsPanel() {
                       <img src={app.profile_image} alt={app.name} className="w-16 h-16 rounded-lg object-cover flex-shrink-0" />
                     ) : (
                       <div className="w-16 h-16 rounded-lg bg-gray-700 flex items-center justify-center flex-shrink-0">
-                        <User className="w-8 h-8 text-gray-500" />
+                        {isVipBoost ? <Crown className="w-8 h-8 text-yellow-400" /> : <User className="w-8 h-8 text-gray-500" />}
                       </div>
                     )}
                     
                     <div className="space-y-1.5 flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="font-bold text-white text-base">{app.name}</span>
-                        {app.age && <span className="text-gray-400 text-sm">· {app.age} yrs</span>}
-                        {app.plan === "vip" ? (
-                          <span className="text-xs px-2 py-0.5 rounded-full border bg-yellow-500/20 text-yellow-400 border-yellow-500/30 font-bold tracking-wide">
-                            VIP PLAN
+                        {app.age && <span className="text-gray-400 text-sm">• {app.age} yrs</span>}
+                        
+                        {isMonthly ? (
+                          <span className="text-xs px-2.5 py-0.5 rounded-full border bg-pink-500/20 text-pink-400 border-pink-500/30 font-bold tracking-wide flex items-center gap-1">
+                            <Crown className="w-3 h-3 text-pink-400" /> FULL MONTH (30,000 UGX)
+                          </span>
+                        ) : isVipBoost ? (
+                          <span className="text-xs px-2.5 py-0.5 rounded-full border bg-yellow-500/20 text-yellow-400 border-yellow-500/30 font-bold tracking-wide flex items-center gap-1">
+                            <Zap className="w-3 h-3 text-yellow-400" /> VIP BOOST ADD-ON (10,000 UGX)
                           </span>
                         ) : (
-                          <span className="text-xs px-2 py-0.5 rounded-full border bg-gray-500/20 text-gray-300 border-gray-500/30">
+                          <span className="text-xs px-2.5 py-0.5 rounded-full border bg-gray-500/20 text-gray-300 border-gray-500/30">
                             ORDINARY
                           </span>
                         )}
+
                         <span className={`text-xs px-2 py-0.5 rounded-full border ${statusInfo.color}`}>
                           {statusInfo.label}
                         </span>
                       </div>
 
+                      {/* VIP Boost Add-On Alert Banner */}
+                      {app.plan === "vip_boost" && (
+                        <div className="p-2.5 bg-yellow-400/10 border border-yellow-400/30 rounded-lg text-xs text-yellow-300">
+                          ⚡ <strong>VIP Boost Request:</strong> Model requested to upgrade profile <strong>"{app.name}"</strong> ({app.phone}) to VIP status for 1 week.
+                        </div>
+                      )}
+
                       <div className="flex flex-wrap gap-3 text-gray-400 text-sm">
                         <span className="flex items-center gap-1"><MapPin className="h-3.5 w-3.5" /> {app.location}</span>
                         <span className="flex items-center gap-1"><Phone className="h-3.5 w-3.5" /> {app.phone}</span>
                         {app.body_type && <span>{app.body_type}</span>}
-                        {app.complexion && <span>· {app.complexion}</span>}
-                        <span className="text-gray-500">· {app.images?.length || 0} pics, {app.videos?.length || 0} vids</span>
+                        {app.complexion && <span>• {app.complexion}</span>}
+                        {app.images?.length > 0 && <span className="text-gray-500">• {app.images.length} pics, {app.videos?.length || 0} vids</span>}
                       </div>
 
-                    {app.short_bio && (
-                      <p className="text-gray-400 text-xs italic">"{app.short_bio}"</p>
-                    )}
+                      {app.short_bio && (
+                        <p className="text-gray-400 text-xs italic">"{app.short_bio}"</p>
+                      )}
 
-                    {/* Payment info */}
-                    {app.transaction_id && (
-                      <div className="mt-2 p-2.5 bg-blue-900/20 border border-blue-500/20 rounded-lg text-xs space-y-1">
-                        <p className="text-blue-300 font-medium">Payment Submitted</p>
-                        <p className="text-gray-300">Method: <span className="text-white font-medium uppercase">{app.payment_method}</span></p>
-                        <p className="text-gray-300">Phone: <span className="text-white font-medium">{app.payment_phone}</span></p>
-                        <p className="text-gray-300">TX ID: <span className="text-white font-mono font-medium">{app.transaction_id}</span></p>
-                      </div>
-                    )}
+                      {/* Payment info */}
+                      {app.transaction_id && (
+                        <div className="mt-2 p-2.5 bg-blue-900/20 border border-blue-500/20 rounded-lg text-xs space-y-1">
+                          <p className="text-blue-300 font-medium">Payment Submitted</p>
+                          <p className="text-gray-300">Method: <span className="text-white font-medium uppercase">{app.payment_method}</span></p>
+                          <p className="text-gray-300">Phone Used: <span className="text-white font-medium">{app.payment_phone}</span></p>
+                          <p className="text-gray-300">TX ID: <span className="text-white font-mono font-medium">{app.transaction_id}</span></p>
+                        </div>
+                      )}
 
-                    <p className="text-gray-600 text-xs mt-1">Applied: {new Date(app.created_at).toLocaleDateString()}</p>
-                  </div>
+                      <p className="text-gray-600 text-xs mt-1">Submitted: {new Date(app.created_at).toLocaleDateString()}</p>
+                    </div>
                   </div>
 
                   {/* Actions */}
-                  {app.status === "pending_verification" && (
+                  {(app.status === "pending_verification" || app.status === "pending_payment") && (
                     <div className="flex gap-2 flex-shrink-0">
                       <Button
                         size="sm"
@@ -223,7 +281,7 @@ export default function ApplicationsPanel() {
                         {actionLoading === app.id ? (
                           <Loader2 className="h-3.5 w-3.5 animate-spin" />
                         ) : (
-                          <><CheckCircle className="h-3.5 w-3.5 mr-1" /> Approve & Publish</>
+                          <><CheckCircle className="h-3.5 w-3.5 mr-1" /> Approve & {app.plan === "vip_boost" ? "Boost to VIP" : "Publish"}</>
                         )}
                       </Button>
                       <Button
