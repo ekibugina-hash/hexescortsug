@@ -38,27 +38,44 @@ const STATUS_LABELS: Record<string, { label: string; color: string }> = {
   rejected:             { label: "Rejected",              color: "bg-red-500/20 text-red-400 border-red-500/30" },
 };
 
+type FilterKey = "pending_verification" | "pending_payment" | "vip_boosts" | "approved" | "rejected" | "all";
+
 export default function ApplicationsPanel() {
   const [applications, setApplications] = useState<Application[]>([]);
+  const [allApps, setAllApps] = useState<Application[]>([]);
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState<string | null>(null);
-  const [filter, setFilter] = useState<"pending_verification" | "pending_payment" | "approved" | "rejected" | "all">("pending_verification");
+  const [filter, setFilter] = useState<FilterKey>("pending_verification");
 
   const fetchApplications = async () => {
     setLoading(true);
-    const query = supabase
+    const { data } = await supabase
       .from("escort_applications")
       .select("*")
       .order("created_at", { ascending: false });
 
-    if (filter !== "all") query.eq("status", filter);
-
-    const { data } = await query;
-    setApplications(data || []);
+    const all = data || [];
+    setAllApps(all);
+    applyFilter(filter, all);
     setLoading(false);
   };
 
-  useEffect(() => { fetchApplications(); }, [filter]);
+  const applyFilter = (f: FilterKey, source: Application[]) => {
+    if (f === "all") {
+      setApplications(source);
+    } else if (f === "vip_boosts") {
+      setApplications(source.filter(a => a.plan === "vip_boost" || a.plan === "vip"));
+    } else {
+      setApplications(source.filter(a => a.status === f));
+    }
+  };
+
+  useEffect(() => { fetchApplications(); }, []);
+
+  const handleFilterChange = (f: FilterKey) => {
+    setFilter(f);
+    applyFilter(f, allApps);
+  };
 
   const handleApprove = async (app: Application) => {
     setActionLoading(app.id);
@@ -72,13 +89,13 @@ export default function ApplicationsPanel() {
           .limit(1);
 
         if (existing && existing.length > 0) {
-          // Upgrade existing profile to VIP
+          // Upgrade existing profile to VIP/pinned for the week
           await supabase
             .from("profiles")
             .update({ is_pinned: true, is_vip: true })
             .eq("id", existing[0].id);
         } else if (app.profile_image) {
-          // If profile_image exists, insert as live profile with VIP
+          // If they attached a profile image, insert as new VIP profile
           await supabase.from("profiles").insert({
             name: app.name,
             age: app.age,
@@ -141,13 +158,21 @@ export default function ApplicationsPanel() {
     fetchApplications();
   };
 
-  const FILTERS = [
+  // Compute badge counts from allApps
+  const countByFilter = (f: FilterKey): number => {
+    if (f === "all") return allApps.length;
+    if (f === "vip_boosts") return allApps.filter(a => a.plan === "vip_boost" || a.plan === "vip").length;
+    return allApps.filter(a => a.status === f).length;
+  };
+
+  const FILTERS: { key: FilterKey; label: string; highlight?: string }[] = [
     { key: "pending_verification", label: "Needs Verification" },
+    { key: "vip_boosts",           label: "VIP Boost Requests", highlight: "yellow" },
     { key: "pending_payment",      label: "No Payment Yet" },
     { key: "approved",             label: "Approved" },
     { key: "rejected",             label: "Rejected" },
     { key: "all",                  label: "All" },
-  ] as const;
+  ];
 
   return (
     <div>
@@ -160,19 +185,39 @@ export default function ApplicationsPanel() {
 
       {/* Filter tabs */}
       <div className="flex flex-wrap gap-2 mb-5">
-        {FILTERS.map((f) => (
-          <button
-            key={f.key}
-            onClick={() => setFilter(f.key)}
-            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${
-              filter === f.key
-                ? "bg-pink-600 text-white border-pink-600"
-                : "bg-gray-800 text-gray-400 border-gray-700 hover:border-gray-500"
-            }`}
-          >
-            {f.label}
-          </button>
-        ))}
+        {FILTERS.map((f) => {
+          const count = countByFilter(f.key);
+          const isActive = filter === f.key;
+          const isYellow = f.highlight === "yellow";
+
+          return (
+            <button
+              key={f.key}
+              onClick={() => handleFilterChange(f.key)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${
+                isActive
+                  ? isYellow
+                    ? "bg-yellow-500 text-black border-yellow-500"
+                    : "bg-pink-600 text-white border-pink-600"
+                  : isYellow
+                    ? "bg-yellow-500/10 text-yellow-400 border-yellow-500/40 hover:border-yellow-400"
+                    : "bg-gray-800 text-gray-400 border-gray-700 hover:border-gray-500"
+              }`}
+            >
+              {isYellow && <Crown className="h-3 w-3" />}
+              {f.label}
+              {count > 0 && (
+                <span className={`inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-bold ${
+                  isActive
+                    ? isYellow ? "bg-black/20 text-black" : "bg-white/20 text-white"
+                    : isYellow ? "bg-yellow-500/30 text-yellow-300" : "bg-gray-700 text-gray-300"
+                }`}>
+                  {count}
+                </span>
+              )}
+            </button>
+          );
+        })}
       </div>
 
       {loading ? (
@@ -215,7 +260,7 @@ export default function ApplicationsPanel() {
                     <div className="space-y-1.5 flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="font-bold text-white text-base">{app.name}</span>
-                        {app.age && <span className="text-gray-400 text-sm">• {app.age} yrs</span>}
+                        {app.age && <span className="text-gray-400 text-sm">· {app.age} yrs</span>}
                         
                         {isMonthly ? (
                           <span className="text-xs px-2.5 py-0.5 rounded-full border bg-pink-500/20 text-pink-400 border-pink-500/30 font-bold tracking-wide flex items-center gap-1">
@@ -236,10 +281,10 @@ export default function ApplicationsPanel() {
                         </span>
                       </div>
 
-                      {/* VIP Boost Add-On Alert Banner */}
+                      {/* VIP Boost Alert Banner */}
                       {app.plan === "vip_boost" && (
                         <div className="p-2.5 bg-yellow-400/10 border border-yellow-400/30 rounded-lg text-xs text-yellow-300">
-                          ⚡ <strong>VIP Boost Request:</strong> Model requested to upgrade profile <strong>"{app.name}"</strong> ({app.phone}) to VIP status for 1 week.
+                          ⚡ <strong>VIP Boost Request:</strong> Existing model <strong>"{app.name}"</strong> ({app.phone}) wants to upgrade to VIP for 1 week. Approve to pin their profile to the top.
                         </div>
                       )}
 
@@ -247,8 +292,8 @@ export default function ApplicationsPanel() {
                         <span className="flex items-center gap-1"><MapPin className="h-3.5 w-3.5" /> {app.location}</span>
                         <span className="flex items-center gap-1"><Phone className="h-3.5 w-3.5" /> {app.phone}</span>
                         {app.body_type && <span>{app.body_type}</span>}
-                        {app.complexion && <span>• {app.complexion}</span>}
-                        {app.images?.length > 0 && <span className="text-gray-500">• {app.images.length} pics, {app.videos?.length || 0} vids</span>}
+                        {app.complexion && <span>· {app.complexion}</span>}
+                        {app.images?.length > 0 && <span className="text-gray-500">· {app.images.length} pics, {app.videos?.length || 0} vids</span>}
                       </div>
 
                       {app.short_bio && (
