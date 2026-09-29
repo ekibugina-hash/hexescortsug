@@ -8,9 +8,6 @@ import { unstable_cache } from 'next/cache';
 // Set this to false to use live database updates while serving images locally to save quota
 const FORCE_STATIC_DATA = false;
 
-// Supabase project storage base URL (for converting local /storage/ paths to full URLs)
-const SUPABASE_STORAGE_BASE = "https://dkyikirsvpauhbexbhvu.supabase.co/storage/v1/object/public";
-
 export function createSeededRand(s: string) {
   let h = 0;
   for (let i = 0; i < s.length; i++) h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
@@ -42,50 +39,27 @@ export function sortAndShuffleProfiles(profiles: ProfileType[], seed?: string): 
 }
 
 /**
- * Transforms ANY image URL to a wsrv.nl-proxied URL for reliable, CDN-cached delivery.
+ * Transforms ANY image reference to local Vercel static storage (/storage/profile-images/...).
  *
- * Handles three cases:
- *  1. Full Supabase storage URLs  → wsrv.nl proxy
- *  2. Local /storage/... paths    → convert to full Supabase URL → wsrv.nl proxy
- *  3. Everything else             → pass through unchanged
- *
- * This ensures images NEVER depend on static files being present in /public/storage/,
- * which was the root cause of recurring broken-image incidents.
+ * This completely bypasses Supabase 402 Payment Required quota blocks & wsrv.nl proxy errors
+ * by serving committed images directly from Vercel's global static Edge CDN (0 CPU, 0 Supabase egress).
  */
 function transformUrl(url: string | null | undefined): string {
   if (!url) return "/placeholder.svg";
 
-  const isImage = /\.(jpg|jpeg|png|webp|jfif|avif)$/i.test(url);
+  // If already a clean local storage path
+  if (url.startsWith("/storage/")) return url;
 
-  // Case 1: Full Supabase storage URL — route through wsrv.nl
-  if (url.includes(".supabase.co") && url.includes("/storage/v1/object/public/")) {
-    if (isImage) {
-      return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=800&output=webp&q=80`;
-    }
-    return url; // videos etc — pass through
+  // Extract filename from any Supabase or wsrv URL
+  const match = url.match(/([a-zA-Z0-9\.\-_]+\.(?:jpg|jpeg|png|webp|jfif|avif|mp4|mov))/i);
+  if (match && match[1]) {
+    const fileName = match[1];
+    return `/storage/profile-images/${fileName}`;
   }
 
-  // Case 2: Local /storage/profile-images/... path — convert to Supabase URL then wsrv.nl
-  if (url.startsWith("/storage/profile-images/")) {
-    const fileName = url.replace("/storage/profile-images/", "");
-    const supabaseUrl = `${SUPABASE_STORAGE_BASE}/profile-images/${fileName}`;
-    if (isImage) {
-      return `https://wsrv.nl/?url=${encodeURIComponent(supabaseUrl)}&w=800&output=webp&q=80`;
-    }
-    return supabaseUrl; // non-image files
-  }
+  // Fallback for non-matching relative paths
+  if (url.startsWith("/")) return url;
 
-  // Case 3: /storage/avatars/... path
-  if (url.startsWith("/storage/avatars/")) {
-    const fileName = url.replace("/storage/avatars/", "");
-    const supabaseUrl = `${SUPABASE_STORAGE_BASE}/avatars/${fileName}`;
-    if (isImage) {
-      return `https://wsrv.nl/?url=${encodeURIComponent(supabaseUrl)}&w=800&output=webp&q=80`;
-    }
-    return supabaseUrl;
-  }
-
-  // Case 4: Anything else (placeholder, external URLs, etc.) — pass through
   return url;
 }
 
