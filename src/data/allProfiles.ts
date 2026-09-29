@@ -5,7 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { slugify } from "@/lib/utils";
 import { unstable_cache } from 'next/cache';
 
-// Set this to false to use live database updates while serving images locally to save quota
+// Set this to true to bypass Supabase entirely and use only committed static data
 const FORCE_STATIC_DATA = false;
 
 export function createSeededRand(s: string) {
@@ -34,33 +34,39 @@ export function sortAndShuffleProfiles(profiles: ProfileType[], seed?: string): 
   const rand = createSeededRand(seed);
   const pinned = profiles.filter(p => p.isPinned);
   const regular = profiles.filter(p => !p.isPinned);
-
   return [...shuffleArray(pinned, rand), ...shuffleArray(regular, rand)];
 }
 
 /**
- * Transforms ANY image reference to local Vercel static storage (/storage/profile-images/...).
- *
- * This completely bypasses Supabase 402 Payment Required quota blocks & wsrv.nl proxy errors
- * by serving committed images directly from Vercel's global static Edge CDN (0 CPU, 0 Supabase egress).
+ * Transforms ANY image reference to a local Vercel static storage path.
+ * Images are served from /public/storage/profile-images/ committed in the repo
+ * via Vercel's global Edge CDN (zero CPU, zero Supabase egress, zero bandwidth cost).
  */
 function transformUrl(url: string | null | undefined): string {
   if (!url) return "/placeholder.svg";
 
-  // If already a clean local storage path
+  // Already a clean local storage path — keep as-is
   if (url.startsWith("/storage/")) return url;
 
-  // Extract filename from any Supabase or wsrv URL
-  const match = url.match(/([a-zA-Z0-9\.\-_]+\.(?:jpg|jpeg|png|webp|jfif|avif|mp4|mov))/i);
-  if (match && match[1]) {
-    const fileName = match[1];
-    return `/storage/profile-images/${fileName}`;
-  }
-
-  // Fallback for non-matching relative paths
+  // Already a root-relative path (placeholder etc.) — keep as-is
   if (url.startsWith("/")) return url;
 
+  // Extract just the filename from any Supabase or wsrv.nl URL
+  const match = url.match(/([a-zA-Z0-9.\-_]+\.(?:jpg|jpeg|png|webp|jfif|avif|mp4|mov))/i);
+  if (match && match[1]) {
+    return `/storage/profile-images/${match[1]}`;
+  }
+
   return url;
+}
+
+/**
+ * Get active (non-archived) static profiles to use as offline fallback.
+ * Filtering here prevents archived profiles (whose images may be missing from
+ * the repo backup) from ever showing publicly when Supabase is unavailable.
+ */
+function getActiveStaticProfiles() {
+  return staticProfiles.filter(p => !p.isArchived);
 }
 
 function mapDbProfile(p: any): ProfileType {
@@ -95,13 +101,15 @@ function mapDbProfile(p: any): ProfileType {
 }
 
 export async function fetchAllProfiles(seed?: string) {
+  const fallback = getActiveStaticProfiles();
+
   if (FORCE_STATIC_DATA) {
-    return seed ? sortAndShuffleProfiles(staticProfiles, seed) : staticProfiles;
+    return seed ? sortAndShuffleProfiles(fallback, seed) : fallback;
   }
 
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
-    console.warn("No Supabase URL; using static fallback.");
-    return seed ? sortAndShuffleProfiles(staticProfiles, seed) : staticProfiles;
+    console.warn("No Supabase URL; using active static profiles fallback.");
+    return seed ? sortAndShuffleProfiles(fallback, seed) : fallback;
   }
   
   try {
@@ -114,31 +122,33 @@ export async function fetchAllProfiles(seed?: string) {
       .order("created_at", { ascending: false });
 
     if (error) {
-      console.error("Supabase error (likely quota hit), using local backup:", error);
-      return seed ? sortAndShuffleProfiles(staticProfiles, seed) : staticProfiles;
+      console.error("Supabase error (likely quota hit), using active static backup:", error);
+      return seed ? sortAndShuffleProfiles(fallback, seed) : fallback;
     }
 
     const dbProfiles: ProfileType[] = (data || []).map(mapDbProfile);
     return seed ? sortAndShuffleProfiles(dbProfiles, seed) : dbProfiles;
   } catch (err) {
-    console.error("Fetch exception, using static fallback:", err);
-    return seed ? sortAndShuffleProfiles(staticProfiles, seed) : staticProfiles;
+    console.error("Fetch exception, using active static fallback:", err);
+    return seed ? sortAndShuffleProfiles(fallback, seed) : fallback;
   }
 }
 
 export async function fetchProfileById(id: string) {
+  // Include archived in lookup so direct profile links still work
+  const allStatic = staticProfiles;
+
   if (FORCE_STATIC_DATA) {
-    return staticProfiles.find(p => p.id === id || slugify(p.name) === id) || null;
+    return allStatic.find(p => p.id === id || slugify(p.name) === id) || null;
   }
 
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
-    return staticProfiles.find(p => p.id === id || slugify(p.name) === id) || null;
+    return allStatic.find(p => p.id === id || slugify(p.name) === id) || null;
   }
 
   try {
-    // First try by ID
     // @ts-ignore
-    const { data: idData, error: idError } = await (supabase as any)
+    const { data: idData } = await (supabase as any)
       .from("profiles")
       .select("*")
       .eq("id", id)
@@ -146,8 +156,8 @@ export async function fetchProfileById(id: string) {
 
     if (idData) return mapDbProfile(idData);
 
-    // If not found, try searching all profiles for a slug match (more reliable than ILike if names have weird chars)
-    const { data: allProfiles, error: allErr } = await (supabase as any)
+    // Try slug match across all non-archived profiles
+    const { data: allProfiles } = await (supabase as any)
       .from("profiles")
       .select("*")
       .eq("is_archived", false);
@@ -157,44 +167,40 @@ export async function fetchProfileById(id: string) {
       if (match) return mapDbProfile(match);
     }
 
-    // Fallback to static lookup by slug or ID
-    return staticProfiles.find(p => p.id === id || slugify(p.name) === id) || null;
+    return allStatic.find(p => p.id === id || slugify(p.name) === id) || null;
   } catch (err) {
     console.error("Fetch exception, using static fallback:", err);
-    return staticProfiles.find(p => p.id === id || slugify(p.name) === id) || null;
+    return allStatic.find(p => p.id === id || slugify(p.name) === id) || null;
   }
 }
 
 // Quota-Safe Fetcher for Location Pages
 export const fetchProfilesByLocation = unstable_cache(
   async (location: string) => {
+    const fallback = getActiveStaticProfiles().filter(p =>
+      p.location.toLowerCase().includes(location.toLowerCase())
+    );
+
     if (FORCE_STATIC_DATA || !process.env.NEXT_PUBLIC_SUPABASE_URL) {
-      // Fallback to static data if needed
-      return staticProfiles.filter(p => 
-        p.location.toLowerCase().includes(location.toLowerCase())
-      );
+      return fallback;
     }
 
     try {
       // @ts-ignore
       const { data, error } = await (supabase as any)
         .from("profiles")
-        // CRITICAL: Only select lightweight columns to save egress! No descriptions or large arrays.
         .select("id, name, location, profile_image, rating, is_pinned, is_vip, is_premium, is_verified")
         .eq("is_archived", false)
-        // CRITICAL: Filter in the DB so we only download profiles for this location
-        .ilike("location", `%${location}%`) 
+        .ilike("location", `%${location}%`)
         .order("is_pinned", { ascending: false });
 
       if (error) throw error;
-      
-      // Map it using your existing mapDbProfile logic
       return (data || []).map(mapDbProfile);
     } catch (err) {
       console.error(`Error fetching profiles for ${location}:`, err);
-      return [];
+      return fallback;
     }
   },
-  ['location-profiles'], // Cache key prefix
-  { revalidate: 3600 } // Cache in Next.js for 1 hour (3600 seconds) to protect Supabase
+  ['location-profiles'],
+  { revalidate: 3600 }
 );
