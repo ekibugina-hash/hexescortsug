@@ -31,15 +31,7 @@ export function ProfileCard({ profile, featured = false, priority = false, anima
   }, [profile.profileImage]);
 
   const handleImageError = () => {
-    if (imgSrc.includes("wsrv.nl/?url=")) {
-      try {
-        const directUrl = decodeURIComponent(imgSrc.split("url=")[1].split("&")[0]);
-        if (directUrl && directUrl !== imgSrc) {
-          setImgSrc(directUrl);
-          return;
-        }
-      } catch {}
-    }
+    // Always fall back to placeholder on any image load error
     setImgSrc("/placeholder.svg");
   };
 
