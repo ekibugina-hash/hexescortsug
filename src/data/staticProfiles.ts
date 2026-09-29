@@ -10,19 +10,19 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kanyanya",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789212475881-q9leoas03kc.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1789212475881-q9leoas03kc.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789212475881-q9leoas03kc.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789136487281-ufbhl4q496p.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789136514149-yjyaufxzf6f.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789136531753-i5f224gc4dm.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789136547615-x05kct8mfw.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789136563325-8c28wt0rqg8.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789136576691-ayjyovmxwnd.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789136594450-kwcq4bbgsyl.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789136602139-4n6gobjf1he.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789136725048-qa9i5flv0sd.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789136782603-c5lo8lx60cd.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1789212475881-q9leoas03kc.jpg",
+      "/storage/profile-images/1789136487281-ufbhl4q496p.jpg",
+      "/storage/profile-images/1789136514149-yjyaufxzf6f.jpg",
+      "/storage/profile-images/1789136531753-i5f224gc4dm.jpg",
+      "/storage/profile-images/1789136547615-x05kct8mfw.jpg",
+      "/storage/profile-images/1789136563325-8c28wt0rqg8.jpg",
+      "/storage/profile-images/1789136576691-ayjyovmxwnd.jpg",
+      "/storage/profile-images/1789136594450-kwcq4bbgsyl.jpg",
+      "/storage/profile-images/1789136602139-4n6gobjf1he.jpg",
+      "/storage/profile-images/1789136725048-qa9i5flv0sd.jpg",
+      "/storage/profile-images/1789136782603-c5lo8lx60cd.jpg"
     ],
     "shortBio": "",
     "description": "Escape the daily grind and step into a sanctuary built for total physical recovery and deep relaxation. At Adventure Spa, we blend restorative deep-tissue techniques, targeted muscle therapy, and soothing aroma blends designed to melt away stress and leave you completely recharged. Whether you're unwinding after a long, active week or simply taking well-deserved time for yourself, our expert therapists tailor every session to your exact needs. Treat yourself to an invigorating wellness experience today! âœ¨ðŸ’†â€â™‚ï¸ðŸ’†â€â™€ï¸\n Professional therapists, Deep Tissue & Reflexology, Calming Atmosphere, Easy Online Bookingâ¤ï¸ðŸ¥° ",
@@ -40,7 +40,7 @@ export const staticProfiles: ProfileType[] = [
     "isAd": true,
     "isVerified": true,
     "adImages": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789134925802-i4fyoz57re.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1789134925802-i4fyoz57re.jpg"
     ]
   },
   {
@@ -52,19 +52,19 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kisaasi",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789212569434-0clhx5jv68yb.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1789212569434-0clhx5jv68yb.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789212569434-0clhx5jv68yb.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789139117352-g79n7vgon1m.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789139120804-h4stdj9xeh.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789139123031-vnlzwpj53qc.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789139125939-94xsq8k5sq.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789139165979-nyjm8wmidtn.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789139168428-ro3dzf2001.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789139169639-rwhi9yslyl.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789139170904-sdy2wwvrjq.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789139171835-ysg88uvmwpk.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789139172841-gpyz7q93vqq.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1789212569434-0clhx5jv68yb.jpg",
+      "/storage/profile-images/1789139117352-g79n7vgon1m.jpg",
+      "/storage/profile-images/1789139120804-h4stdj9xeh.jpg",
+      "/storage/profile-images/1789139123031-vnlzwpj53qc.jpg",
+      "/storage/profile-images/1789139125939-94xsq8k5sq.jpg",
+      "/storage/profile-images/1789139165979-nyjm8wmidtn.jpg",
+      "/storage/profile-images/1789139168428-ro3dzf2001.jpg",
+      "/storage/profile-images/1789139169639-rwhi9yslyl.jpg",
+      "/storage/profile-images/1789139170904-sdy2wwvrjq.jpg",
+      "/storage/profile-images/1789139171835-ysg88uvmwpk.jpg",
+      "/storage/profile-images/1789139172841-gpyz7q93vqq.jpg"
     ],
     "shortBio": "",
     "description": "â€‹âœ¨ Fantasia Spa â€” Step Into Pure Serenity & Blissâ¤ï¸ðŸ˜˜ \nâ€‹Indulge your senses in an unforgettable escape at Fantasia Spa. From the moment you walk through our doors, gentle scents, warm lighting, and calm ambient tones transport you into pure relaxation. Our signature Swedish massages, hot stone treatments, and customized wellness therapies are crafted to ease tension, soothe your mind, and boost your energy. You don't just get a massage hereâ€”you get a full sensory retreat. ðŸƒðŸŒº\n Luxury Ambience, Signature Oil Blends, Stress Relief & Muscle Care, Couple & Solo Packages",
@@ -82,7 +82,7 @@ export const staticProfiles: ProfileType[] = [
     "isAd": true,
     "isVerified": true,
     "adImages": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789134435150-9udciufm9e6.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1789134435150-9udciufm9e6.jpg"
     ]
   },
   {
@@ -94,11 +94,11 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Light",
     "location": "Makyindye",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1788696553803-5y3gczy2ioh.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1788696553803-5y3gczy2ioh.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1788696553803-5y3gczy2ioh.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1788696560718-1hcgge326p7.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1788696561492-odq270rkp6r.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1788696553803-5y3gczy2ioh.jpg",
+      "/storage/profile-images/1788696560718-1hcgge326p7.jpg",
+      "/storage/profile-images/1788696561492-odq270rkp6r.jpg"
     ],
     "shortBio": "",
     "description": "Ready to serve you as my king with all erotic services you wish ðŸ˜˜ ",
@@ -122,11 +122,11 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Kampala ",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1788632639253-o77ofhfd2d.jpeg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1788632639253-o77ofhfd2d.jpeg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1788632639253-o77ofhfd2d.jpeg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1788632659003-lsnih7yna6q.jpeg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1788632661840-noyfrt58boi.jpeg&w=800&output=webp&q=80"
+      "/storage/profile-images/1788632639253-o77ofhfd2d.jpeg",
+      "/storage/profile-images/1788632659003-lsnih7yna6q.jpeg",
+      "/storage/profile-images/1788632661840-noyfrt58boi.jpeg"
     ],
     "shortBio": "Iâ€™m a very open minded person and Iâ€™m here to give you great services feel free to inbox me by whats",
     "description": "",
@@ -151,11 +151,11 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Chocolate",
     "location": "Ntinda ",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1786479413517-vdd8uk3ow18.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1786479413517-vdd8uk3ow18.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1786479413517-vdd8uk3ow18.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1786456675482-zib6k9fjvc.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1786456676756-ikcksrlpvy.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1786479413517-vdd8uk3ow18.jpg",
+      "/storage/profile-images/1786456675482-zib6k9fjvc.jpg",
+      "/storage/profile-images/1786456676756-ikcksrlpvy.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -181,12 +181,12 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Dark",
     "location": "Namasuba",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1784100544895-gjfnv38seq.jpeg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1784100544895-gjfnv38seq.jpeg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1784100544895-gjfnv38seq.jpeg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1784101023600-i8b0ux9e5y9.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1784101027711-8d9cw3m77wy.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1784101037201-547m6yqxri6.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1784100544895-gjfnv38seq.jpeg",
+      "/storage/profile-images/1784101023600-i8b0ux9e5y9.jpg",
+      "/storage/profile-images/1784101027711-8d9cw3m77wy.jpg",
+      "/storage/profile-images/1784101037201-547m6yqxri6.jpg"
     ],
     "shortBio": "",
     "description": "In calls, out calls, massage, short, long, full package, full night, inbox me â¤ï¸ðŸ’¦ ",
@@ -216,10 +216,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Nansana",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789024384532-wjhuedgwqwr.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1789024384532-wjhuedgwqwr.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789024384532-wjhuedgwqwr.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789024392545-f9doo8pc1.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1789024384532-wjhuedgwqwr.jpg",
+      "/storage/profile-images/1789024392545-f9doo8pc1.jpg"
     ],
     "shortBio": "",
     "description": "I do in calls and outcalls,  full package, long, short,  Blow job, handjob, I also do Massage, full night, inbox or call me my loveâ¤ï¸ ",
@@ -247,10 +247,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kampala",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781290234490-u5dqr112xkc.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1781290234490-u5dqr112xkc.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781290234490-u5dqr112xkc.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781290244843-y3lil0h67.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1781290234490-u5dqr112xkc.jpg",
+      "/storage/profile-images/1781290244843-y3lil0h67.jpg"
     ],
     "shortBio": "",
     "description": "I do out calls only",
@@ -278,9 +278,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Entebbe road",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781117660814-l9o6r7m4tyo.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1781117660814-l9o6r7m4tyo.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781117660814-l9o6r7m4tyo.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1781117660814-l9o6r7m4tyo.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -308,9 +308,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Kampala town",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781117018370-kfxqy82fuv.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1781117018370-kfxqy82fuv.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781117018370-kfxqy82fuv.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1781117018370-kfxqy82fuv.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -338,9 +338,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Makindye",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789125435197-bdet7v0z4qe.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1789125435197-bdet7v0z4qe.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789125435197-bdet7v0z4qe.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1789125435197-bdet7v0z4qe.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -368,9 +368,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Ntinda",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780346072382-txql4h3a6y.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1780346072382-txql4h3a6y.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780346072382-txql4h3a6y.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1780346072382-txql4h3a6y.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -398,12 +398,12 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Makerere",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781340265120-gn6yu3ix9jg.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1781340265120-gn6yu3ix9jg.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781340265120-gn6yu3ix9jg.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1779032859629-r7by0hk02n.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1779032860987-baj2n74k22b.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1779032861884-z240qcnuiap.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1781340265120-gn6yu3ix9jg.jpg",
+      "/storage/profile-images/1779032859629-r7by0hk02n.jpg",
+      "/storage/profile-images/1779032860987-baj2n74k22b.jpg",
+      "/storage/profile-images/1779032861884-z240qcnuiap.jpg"
     ],
     "shortBio": "",
     "description": "I am Nattiely66ðŸ¥° located in kitante kololo, I offer companionship, massage, BJ, handjob, indoor and outdoor calls, come let me make you feel good daddyâ¤ï¸ðŸ˜˜ ",
@@ -431,10 +431,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kawempe",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1778318367096-d1uw2yfrn9.jpeg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1778318367096-d1uw2yfrn9.jpeg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1778318367096-d1uw2yfrn9.jpeg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1778318374726-b8ht515y07e.jpeg&w=800&output=webp&q=80"
+      "/storage/profile-images/1778318367096-d1uw2yfrn9.jpeg",
+      "/storage/profile-images/1778318374726-b8ht515y07e.jpeg"
     ],
     "shortBio": "",
     "description": "",
@@ -462,10 +462,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kawempe",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780571616355-sy8s95izgsk.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1780571616355-sy8s95izgsk.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780571616355-sy8s95izgsk.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780571638021-qrac3z6aycc.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1780571616355-sy8s95izgsk.jpg",
+      "/storage/profile-images/1780571638021-qrac3z6aycc.jpg"
     ],
     "shortBio": "",
     "description": "I do all types of massages, body to body, Erotic, deep tissue exclusives and companionshipðŸ¥°â™¥ï¸. Come experience the ultimate care, relaxation and entertainment ðŸ˜â¤ï¸.\n\nSwedish......30k, \nHalf body........25k, \nHard massage........40k, \nScrab and massage........70k, \nHot towel........70k, \n4 hands.........60k, \nBody to body.........100k, \nExtra things \nBJ with condom..........20k, \nBJ with out............40k, \nShot............50k, \nHand job..........15k, ",
@@ -491,15 +491,15 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Mengo",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781166500545-bv74vfpafkq.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1781166500545-bv74vfpafkq.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781166500545-bv74vfpafkq.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1777270315323-h9og35m6t3k.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1777270316438-u38d32j15ke.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1777270318132-c7fvjnx1e2n.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1778413138771-uz14o2fj3u.jpeg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1778413171649-lyj3cv1hh6.jpeg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1778413188183-zclx10h1899.jpeg&w=800&output=webp&q=80"
+      "/storage/profile-images/1781166500545-bv74vfpafkq.jpg",
+      "/storage/profile-images/1777270315323-h9og35m6t3k.jpg",
+      "/storage/profile-images/1777270316438-u38d32j15ke.jpg",
+      "/storage/profile-images/1777270318132-c7fvjnx1e2n.jpg",
+      "/storage/profile-images/1778413138771-uz14o2fj3u.jpeg",
+      "/storage/profile-images/1778413171649-lyj3cv1hh6.jpeg",
+      "/storage/profile-images/1778413188183-zclx10h1899.jpeg"
     ],
     "shortBio": "",
     "description": "Daddy, I got it all that you need ðŸ¥°ðŸ†ðŸ˜› ",
@@ -527,10 +527,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kasubi",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1783976651139-ok87si4hi9l.jpeg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1783976651139-ok87si4hi9l.jpeg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1783976651139-ok87si4hi9l.jpeg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1783976659279-w71apzitw1l.jpeg&w=800&output=webp&q=80"
+      "/storage/profile-images/1783976651139-ok87si4hi9l.jpeg",
+      "/storage/profile-images/1783976659279-w71apzitw1l.jpeg"
     ],
     "shortBio": "",
     "description": "",
@@ -558,43 +558,43 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kampala",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789214425776-gxzgg7m1t1f.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1789214425776-gxzgg7m1t1f.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789214425776-gxzgg7m1t1f.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776415984426-bo9b05bvhbd.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776415986844-751e25m9vo4.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776416280635-dpkyg1rz8ri.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776416334214-puygbh902a.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776416347866-isevphsdi2l.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776416385091-w27bwu2wpl.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776416409976-qe3ggrkmo.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776416427257-qawbmoz2efs.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776416456268-h4q5rz5gdhf.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776416514206-65j3y1g5scd.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776416642811-sd47hljyvsf.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776416968876-tkjivd4gc8.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460570070-isyy684z4x.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460597575-uhv1zelrz9c.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460604999-984nutkr67.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460613118-mc2eeqnld3d.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460623560-duj6k1k22t.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460632982-t3yhtgq4eu8.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460641124-va0fnxpm8kr.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460652323-7hst7by13ot.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460660504-ejipmrcdhf.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460668214-89cyjc8714.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460677964-h8gzhv0hm66.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460687778-r8hffn33cd.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460703456-drmcncur78h.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460714437-vxtxnpmv7t.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460722357-qrutgqre1t.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460731059-jan555548a.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776460744684-empunctx3yi.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1778086715589-l0zh3gq48a.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1778086716468-0haix58sfzi.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1778086718172-s7lzekuvx2r.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1778086719341-yod1eoxlp1o.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1778086720501-xekwancje2.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1789214425776-gxzgg7m1t1f.jpg",
+      "/storage/profile-images/1776415984426-bo9b05bvhbd.jpg",
+      "/storage/profile-images/1776415986844-751e25m9vo4.jpg",
+      "/storage/profile-images/1776416280635-dpkyg1rz8ri.jpg",
+      "/storage/profile-images/1776416334214-puygbh902a.jpg",
+      "/storage/profile-images/1776416347866-isevphsdi2l.jpg",
+      "/storage/profile-images/1776416385091-w27bwu2wpl.jpg",
+      "/storage/profile-images/1776416409976-qe3ggrkmo.jpg",
+      "/storage/profile-images/1776416427257-qawbmoz2efs.jpg",
+      "/storage/profile-images/1776416456268-h4q5rz5gdhf.jpg",
+      "/storage/profile-images/1776416514206-65j3y1g5scd.jpg",
+      "/storage/profile-images/1776416642811-sd47hljyvsf.jpg",
+      "/storage/profile-images/1776416968876-tkjivd4gc8.jpg",
+      "/storage/profile-images/1776460570070-isyy684z4x.jpg",
+      "/storage/profile-images/1776460597575-uhv1zelrz9c.jpg",
+      "/storage/profile-images/1776460604999-984nutkr67.jpg",
+      "/storage/profile-images/1776460613118-mc2eeqnld3d.jpg",
+      "/storage/profile-images/1776460623560-duj6k1k22t.jpg",
+      "/storage/profile-images/1776460632982-t3yhtgq4eu8.jpg",
+      "/storage/profile-images/1776460641124-va0fnxpm8kr.jpg",
+      "/storage/profile-images/1776460652323-7hst7by13ot.jpg",
+      "/storage/profile-images/1776460660504-ejipmrcdhf.jpg",
+      "/storage/profile-images/1776460668214-89cyjc8714.jpg",
+      "/storage/profile-images/1776460677964-h8gzhv0hm66.jpg",
+      "/storage/profile-images/1776460687778-r8hffn33cd.jpg",
+      "/storage/profile-images/1776460703456-drmcncur78h.jpg",
+      "/storage/profile-images/1776460714437-vxtxnpmv7t.jpg",
+      "/storage/profile-images/1776460722357-qrutgqre1t.jpg",
+      "/storage/profile-images/1776460731059-jan555548a.jpg",
+      "/storage/profile-images/1776460744684-empunctx3yi.jpg",
+      "/storage/profile-images/1778086715589-l0zh3gq48a.jpg",
+      "/storage/profile-images/1778086716468-0haix58sfzi.jpg",
+      "/storage/profile-images/1778086718172-s7lzekuvx2r.jpg",
+      "/storage/profile-images/1778086719341-yod1eoxlp1o.jpg",
+      "/storage/profile-images/1778086720501-xekwancje2.jpg"
     ],
     "shortBio": "",
     "description": "Indulge in the cityâ€™s most requested massage serviceðŸŒŸ . At Kampala Cream Best service massage spa â™¥ï¸ðŸ¥° , we pride ourselves on delivering a \"Best Service\" experience every time. From our skilled therapists to our calming atmosphere, your satisfaction is our priority. Treat yourself to the luxury you deserve.\nBook your session now and feel the difference.â™¥ï¸ðŸ’‹ðŸ†ðŸ˜ ",
@@ -620,7 +620,7 @@ export const staticProfiles: ProfileType[] = [
     "isAd": true,
     "isVerified": true,
     "adImages": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1789214794622-88slkr7w14p.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1789214794622-88slkr7w14p.jpg"
     ]
   },
   {
@@ -632,9 +632,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Bwaise ",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776371910802-2m3asd44uf8.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1776371910802-2m3asd44uf8.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776371910802-2m3asd44uf8.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1776371910802-2m3asd44uf8.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -659,9 +659,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Bwaise",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776371713442-rydx3c7qf4j.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1776371713442-rydx3c7qf4j.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776371713442-rydx3c7qf4j.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1776371713442-rydx3c7qf4j.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -688,9 +688,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kawempe",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776371578095-y03crj6h43.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1776371578095-y03crj6h43.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776371578095-y03crj6h43.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1776371578095-y03crj6h43.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -715,10 +715,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Entebbe",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780507511460-rhkc054jt0q.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1780507511460-rhkc054jt0q.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780507511460-rhkc054jt0q.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776367731615-tju7piadu4i.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1780507511460-rhkc054jt0q.jpg",
+      "/storage/profile-images/1776367731615-tju7piadu4i.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -743,9 +743,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Dark",
     "location": "Gulu",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776250857419-2l7bchjhcqa.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1776250857419-2l7bchjhcqa.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776250857419-2l7bchjhcqa.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1776250857419-2l7bchjhcqa.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -775,9 +775,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Fort-portal",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775430840575-u83l3sbztcf.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775430840575-u83l3sbztcf.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775430840575-u83l3sbztcf.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775430840575-u83l3sbztcf.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -805,9 +805,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Dark",
     "location": "Kawempe",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299377420-i802aitjrwg.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775299377420-i802aitjrwg.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775939810646-id4g18u0j8.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775939810646-id4g18u0j8.jpg"
     ],
     "shortBio": "",
     "description": "BJ, Sex Companionship\n",
@@ -839,9 +839,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Dark",
     "location": "Kasubi",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301582935-80p53dh3jja.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775301582935-80p53dh3jja.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301582935-80p53dh3jja.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775301582935-80p53dh3jja.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -866,10 +866,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Ndejje",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299501964-xvbwmxpjl3r.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775299501964-xvbwmxpjl3r.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299501964-xvbwmxpjl3r.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299515727-w5ehhxn95vj.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775299501964-xvbwmxpjl3r.jpg",
+      "/storage/profile-images/1775299515727-w5ehhxn95vj.jpg"
     ],
     "shortBio": "",
     "description": "Minimum 150,000 ugx",
@@ -894,9 +894,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Mengo",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299155080-9fvozjvg8qa.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775299155080-9fvozjvg8qa.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299155080-9fvozjvg8qa.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775299155080-9fvozjvg8qa.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -923,9 +923,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Makerere",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781257920893-prpy1uunse.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1781257920893-prpy1uunse.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781257920893-prpy1uunse.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1781257920893-prpy1uunse.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -952,9 +952,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kawempe",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780507815020-7c1fl152vys.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1780507815020-7c1fl152vys.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780507815020-7c1fl152vys.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1780507815020-7c1fl152vys.jpg"
     ],
     "shortBio": "",
     "description": "Good n profetional massages, out calls only",
@@ -981,9 +981,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Kampala",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781260143890-jhkdt5dz2cc.jpeg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1781260143890-jhkdt5dz2cc.jpeg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781260143890-jhkdt5dz2cc.jpeg&w=800&output=webp&q=80"
+      "/storage/profile-images/1781260143890-jhkdt5dz2cc.jpeg"
     ],
     "shortBio": "",
     "description": "",
@@ -1010,9 +1010,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Kampala",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299048506-xy18auq6ql.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775299048506-xy18auq6ql.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299048506-xy18auq6ql.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775299048506-xy18auq6ql.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1039,9 +1039,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Kampala town",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776328643970-iquv4jd72dj.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1776328643970-iquv4jd72dj.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776328643970-iquv4jd72dj.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1776328643970-iquv4jd72dj.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1070,9 +1070,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kampala",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300305791-qt9zpbdx5w.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775300305791-qt9zpbdx5w.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300305791-qt9zpbdx5w.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775300305791-qt9zpbdx5w.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1099,9 +1099,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Salaama",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302211720-erxv89wq0c5.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775302211720-erxv89wq0c5.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302211720-erxv89wq0c5.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775302211720-erxv89wq0c5.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1126,10 +1126,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Salaama",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1777198018944-re3yaxnvgm.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1777198018944-re3yaxnvgm.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1777198018944-re3yaxnvgm.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1777198034875-o9md7ll2of.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1777198018944-re3yaxnvgm.jpg",
+      "/storage/profile-images/1777198034875-o9md7ll2of.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1154,9 +1154,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Rubaga",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300903484-hdf182brj5.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775300903484-hdf182brj5.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300903484-hdf182brj5.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775300903484-hdf182brj5.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1183,9 +1183,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Rubaga",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300701643-pln1ddo08jf.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775300701643-pln1ddo08jf.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300701643-pln1ddo08jf.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775300701643-pln1ddo08jf.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1212,9 +1212,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kampala town",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781258742769-wovdykp4hi.jpeg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1781258742769-wovdykp4hi.jpeg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781258742769-wovdykp4hi.jpeg&w=800&output=webp&q=80"
+      "/storage/profile-images/1781258742769-wovdykp4hi.jpeg"
     ],
     "shortBio": "",
     "description": "",
@@ -1241,10 +1241,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Kampala",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300536281-tsw5rih2cjl.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775300536281-tsw5rih2cjl.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300536281-tsw5rih2cjl.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300541744-hps6slj23iu.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775300536281-tsw5rih2cjl.jpg",
+      "/storage/profile-images/1775300541744-hps6slj23iu.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1271,10 +1271,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kampala",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299005357-w1fqh2rrnj.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775299005357-w1fqh2rrnj.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299005357-w1fqh2rrnj.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299014804-t0wfezqvus.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775299005357-w1fqh2rrnj.jpg",
+      "/storage/profile-images/1775299014804-t0wfezqvus.jpg"
     ],
     "shortBio": "Your favorite escape is just a message away",
     "description": "Hi there I am Cara, and I believe the best moments in life are the ones where you can truly be yourself, I'm a wrm, down to earth companion who loves good conversation, genuine laughs, creating a relaxed atmosphere where the outside world just fades away.  Come let me make you feel better, happy and have fun all night or dayâ¤ï¸ðŸ˜˜ðŸ˜",
@@ -1301,12 +1301,12 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Jinja",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301376168-7dnlq3wzmb9.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775301376168-7dnlq3wzmb9.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301376168-7dnlq3wzmb9.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301386593-meocgoht7nb.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301393537-m7kg5v486tr.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301401678-b92oqz423cg.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775301376168-7dnlq3wzmb9.jpg",
+      "/storage/profile-images/1775301386593-meocgoht7nb.jpg",
+      "/storage/profile-images/1775301393537-m7kg5v486tr.jpg",
+      "/storage/profile-images/1775301401678-b92oqz423cg.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1333,10 +1333,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Dark",
     "location": "Entebbe",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301765700-tl7o485lk5a.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775301765700-tl7o485lk5a.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301765700-tl7o485lk5a.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301778082-ckn510wyvx.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775301765700-tl7o485lk5a.jpg",
+      "/storage/profile-images/1775301778082-ckn510wyvx.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1363,11 +1363,11 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Najjanankumbi",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301633224-h3zuu65btmi.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775301633224-h3zuu65btmi.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301633224-h3zuu65btmi.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301642969-roidq0cpex9.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775301648895-eqb050iw18i.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775301633224-h3zuu65btmi.jpg",
+      "/storage/profile-images/1775301642969-roidq0cpex9.jpg",
+      "/storage/profile-images/1775301648895-eqb050iw18i.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1394,11 +1394,11 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Kawempe",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302045009-0q1c1qhdrf8.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775302045009-0q1c1qhdrf8.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302045009-0q1c1qhdrf8.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302053100-99wk1pbkmuc.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302067326-1tau877uh64.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775302045009-0q1c1qhdrf8.jpg",
+      "/storage/profile-images/1775302053100-99wk1pbkmuc.jpg",
+      "/storage/profile-images/1775302067326-1tau877uh64.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1425,10 +1425,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kampala town",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302590917-gme6m2fk7ia.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775302590917-gme6m2fk7ia.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302590917-gme6m2fk7ia.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302598603-lo11uxa6el.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775302590917-gme6m2fk7ia.jpg",
+      "/storage/profile-images/1775302598603-lo11uxa6el.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1455,10 +1455,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Kampala town",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302727752-xfc5hx8jj1i.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775302727752-xfc5hx8jj1i.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302727752-xfc5hx8jj1i.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302735632-55la8k4gm4m.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775302727752-xfc5hx8jj1i.jpg",
+      "/storage/profile-images/1775302735632-55la8k4gm4m.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1487,9 +1487,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Entebbe",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302490810-mxo3skz8k6.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775302490810-mxo3skz8k6.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302490810-mxo3skz8k6.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775302490810-mxo3skz8k6.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1518,10 +1518,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kampala town",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302850675-2365fxl6r0h.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775302850675-2365fxl6r0h.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302850675-2365fxl6r0h.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775302856147-gnv5kgsfu5u.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775302850675-2365fxl6r0h.jpg",
+      "/storage/profile-images/1775302856147-gnv5kgsfu5u.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1548,9 +1548,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Light",
     "location": "Kawempe",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780296984395-rpz01r2pz8.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1780296984395-rpz01r2pz8.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780296984395-rpz01r2pz8.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1780296984395-rpz01r2pz8.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1577,9 +1577,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Dark",
     "location": "Makyindye",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775330487708-h6qfb4wzrkp.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775330487708-h6qfb4wzrkp.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775330487708-h6qfb4wzrkp.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775330487708-h6qfb4wzrkp.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1604,13 +1604,13 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Masanafu",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781205671429-9r0fqkymotr.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1781205671429-9r0fqkymotr.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1781205671429-9r0fqkymotr.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780683423227-q3dickj5okg.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780683452568-rm4sjx461r.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780683483482-tx5jsglb72q.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780683524544-j02o294x0no.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1781205671429-9r0fqkymotr.jpg",
+      "/storage/profile-images/1780683423227-q3dickj5okg.jpg",
+      "/storage/profile-images/1780683452568-rm4sjx461r.jpg",
+      "/storage/profile-images/1780683483482-tx5jsglb72q.jpg",
+      "/storage/profile-images/1780683524544-j02o294x0no.jpg"
     ],
     "shortBio": "",
     "description": "Forget the clinical feel of a standard massage spa. Soft Touch Spa is designed for the modern gentleman who demands more from his downtimeðŸ˜ðŸ† . Our stunning escorts are trained to melt away your stress through expert massage before pivoting to a more intimate, personalized experience.ðŸ¥°ðŸ’‹ \nâ€‹What to Expect: Hot oil treatments, Nuru-style play, and gorgeous ladies who love what they do.â¤ï¸ðŸ”¥ ",
@@ -1628,7 +1628,7 @@ export const staticProfiles: ProfileType[] = [
     "isAd": true,
     "isVerified": true,
     "adImages": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1777645166443-k7s5yt9684p.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1777645166443-k7s5yt9684p.jpg"
     ]
   },
   {
@@ -1640,10 +1640,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Makerere",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300963193-kpjf4zgkpq.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775300963193-kpjf4zgkpq.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300963193-kpjf4zgkpq.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300974924-4cpowmlivkn.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775300963193-kpjf4zgkpq.jpg",
+      "/storage/profile-images/1775300974924-4cpowmlivkn.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1670,9 +1670,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kampala town",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300365181-05xxh8ofpx6.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775300365181-05xxh8ofpx6.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300365181-05xxh8ofpx6.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775300365181-05xxh8ofpx6.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1699,9 +1699,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Kasubi",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1783964365743-mk6bnt6bue.jpeg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1783964365743-mk6bnt6bue.jpeg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1783964365743-mk6bnt6bue.jpeg&w=800&output=webp&q=80"
+      "/storage/profile-images/1783964365743-mk6bnt6bue.jpeg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls,  short, long, massage, and full night, inbox meâ¤ï¸ðŸ˜ ",
@@ -1729,9 +1729,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Mengo",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299595463-jwwoh16vtj.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775299595463-jwwoh16vtj.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299595463-jwwoh16vtj.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775299595463-jwwoh16vtj.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1756,9 +1756,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Bukoto",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299918040-szeso3o9fv.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775299918040-szeso3o9fv.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775299918040-szeso3o9fv.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775299918040-szeso3o9fv.jpg"
     ],
     "shortBio": "",
     "description": "I am to give what u have always dreamed ofâ¤ï¸, come Let me take you to your fantasies daddyðŸ’‹ðŸ’•ðŸ’—",
@@ -1785,9 +1785,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kyanja",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780508194417-v4vdn6cgcd.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1780508194417-v4vdn6cgcd.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780508194417-v4vdn6cgcd.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1780508194417-v4vdn6cgcd.jpg"
     ],
     "shortBio": "",
     "description": "Come let me tell you to paradise ðŸ˜˜ðŸ˜",
@@ -1814,9 +1814,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Makerere",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775306594528-o24jk4qb8y7.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775306594528-o24jk4qb8y7.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775306594528-o24jk4qb8y7.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775306594528-o24jk4qb8y7.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1841,10 +1841,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kasubi",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300595938-fzkt4tbji0i.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775300595938-fzkt4tbji0i.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300595938-fzkt4tbji0i.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300605030-qkaft94vd1b.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775300595938-fzkt4tbji0i.jpg",
+      "/storage/profile-images/1775300605030-qkaft94vd1b.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1871,9 +1871,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kampala",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780508859062-cbonj78jsoo.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1780508859062-cbonj78jsoo.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780508859062-cbonj78jsoo.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1780508859062-cbonj78jsoo.jpg"
     ],
     "shortBio": "",
     "description": "Calm and positive mindedðŸ¥°",
@@ -1900,9 +1900,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Light",
     "location": "Munyonyo",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773737894161-b2hu7iczxfn.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1773737894161-b2hu7iczxfn.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773737894161-b2hu7iczxfn.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1773737894161-b2hu7iczxfn.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1927,9 +1927,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Light",
     "location": "Ntinda",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780508949212-nks8p69ez8f.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1780508949212-nks8p69ez8f.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780508949212-nks8p69ez8f.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1780508949212-nks8p69ez8f.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1954,9 +1954,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Dark",
     "location": "Wakiso",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773668251659-0vaxks8dds1d.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1773668251659-0vaxks8dds1d.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773668251659-0vaxks8dds1d.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1773668251659-0vaxks8dds1d.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -1981,10 +1981,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Munyonyo",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300097389-6gcrxoocmdt.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775300097389-6gcrxoocmdt.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300097389-6gcrxoocmdt.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300106497-qiscfekxm6.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775300097389-6gcrxoocmdt.jpg",
+      "/storage/profile-images/1775300106497-qiscfekxm6.jpg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls",
@@ -2009,9 +2009,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Kyanja",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300276356-tmdyb58c29.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775300276356-tmdyb58c29.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775300276356-tmdyb58c29.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775300276356-tmdyb58c29.jpg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls ",
@@ -2036,9 +2036,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kyanja",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773666596625-28xfvklx6ds.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1773666596625-28xfvklx6ds.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773666596625-28xfvklx6ds.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1773666596625-28xfvklx6ds.jpg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls, short - 150,000 ugx",
@@ -2063,9 +2063,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kampala",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776251250880-mshkqvkf0tb.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1776251250880-mshkqvkf0tb.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776251250880-mshkqvkf0tb.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1776251250880-mshkqvkf0tb.jpg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls",
@@ -2090,9 +2090,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Zana",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773662139114-r1o9gy8ufy9.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1773662139114-r1o9gy8ufy9.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773662139114-r1o9gy8ufy9.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1773662139114-r1o9gy8ufy9.jpg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls",
@@ -2120,9 +2120,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Light",
     "location": "Nsambya",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773661669447-f999rwpwazj.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1773661669447-f999rwpwazj.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773661669447-f999rwpwazj.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1773661669447-f999rwpwazj.jpg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls ",
@@ -2147,9 +2147,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Light",
     "location": "Kansanga",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773660884666-wgnprom5l7t.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1773660884666-wgnprom5l7t.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773660884666-wgnprom5l7t.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1773660884666-wgnprom5l7t.jpg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls ",
@@ -2174,9 +2174,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kampala",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780508424842-3fajul47l4q.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1780508424842-3fajul47l4q.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780508424842-3fajul47l4q.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1780508424842-3fajul47l4q.jpg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls, short - 80,000ugx ",
@@ -2201,9 +2201,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Mbarara",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773660093686-ha6wbt5zabi.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1773660093686-ha6wbt5zabi.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773660093686-ha6wbt5zabi.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1773660093686-ha6wbt5zabi.jpg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls, short - 80,000ugx",
@@ -2228,9 +2228,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Mbarara",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773660026683-r9nsrtrcom.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1773660026683-r9nsrtrcom.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773660026683-r9nsrtrcom.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1773660026683-r9nsrtrcom.jpg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls, short - minimum 80,000ugx",
@@ -2255,10 +2255,10 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Light",
     "location": "Makyindye",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773658881924-7aupg07ki0c.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1773658881924-7aupg07ki0c.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773658881924-7aupg07ki0c.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773661267404-oxsqwko3uvs.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1773658881924-7aupg07ki0c.jpg",
+      "/storage/profile-images/1773661267404-oxsqwko3uvs.jpg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls , short - minimum 80,000ugx",
@@ -2284,11 +2284,11 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Rubaga Road",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773657907785-6ykyfw56nnp.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1773657907785-6ykyfw56nnp.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773657907785-6ykyfw56nnp.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773657928822-p8m7y0k7m3j.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773657943206-u8ar8zhdui.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1773657907785-6ykyfw56nnp.jpg",
+      "/storage/profile-images/1773657928822-p8m7y0k7m3j.jpg",
+      "/storage/profile-images/1773657943206-u8ar8zhdui.jpg"
     ],
     "shortBio": "",
     "description": "Outcalls only - minimum 80,000ugx",
@@ -2313,11 +2313,11 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Dark",
     "location": "Jinja",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773757584706-vbkq6ihmg7.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1773757584706-vbkq6ihmg7.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773757584706-vbkq6ihmg7.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773757601375-2ebke03n8df.jpg&w=800&output=webp&q=80",
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773757610630-s4k4rpub3fs.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1773757584706-vbkq6ihmg7.jpg",
+      "/storage/profile-images/1773757601375-2ebke03n8df.jpg",
+      "/storage/profile-images/1773757610630-s4k4rpub3fs.jpg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls ",
@@ -2345,9 +2345,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kampala",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776369595911-1n5l6ronuzz.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1776369595911-1n5l6ronuzz.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1776369595911-1n5l6ronuzz.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1776369595911-1n5l6ronuzz.jpg"
     ],
     "shortBio": "",
     "description": "Incalls and outcalls \nMinimum 100,000 ugx",
@@ -2375,9 +2375,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Brown",
     "location": "Namugongo",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780297098424-yi9ml62df6.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1780297098424-yi9ml62df6.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780297098424-yi9ml62df6.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1780297098424-yi9ml62df6.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -2402,9 +2402,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Dark",
     "location": "Kalerwe",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773522653230-kubsa1knin9.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1773522653230-kubsa1knin9.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773522653230-kubsa1knin9.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1773522653230-kubsa1knin9.jpg"
     ],
     "shortBio": "",
     "description": "",
@@ -2429,9 +2429,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Mbarara",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773521483990-d2t5tf0wye9.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1773521483990-d2t5tf0wye9.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1773521483990-d2t5tf0wye9.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1773521483990-d2t5tf0wye9.jpg"
     ],
     "shortBio": "Outcalls",
     "description": "",
@@ -2458,9 +2458,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Kampala town",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780509091877-3izu3gqg162.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1780509091877-3izu3gqg162.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1780509091877-3izu3gqg162.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1780509091877-3izu3gqg162.jpg"
     ],
     "shortBio": "Available for outcalls ",
     "description": "",
@@ -2487,9 +2487,9 @@ export const staticProfiles: ProfileType[] = [
     "complexion": "Medium",
     "location": "Makerere",
     "rating": 4.5,
-    "profileImage": "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775306523787-ls2ia005mr9.jpg&w=800&output=webp&q=80",
+    "profileImage": "/storage/profile-images/1775306523787-ls2ia005mr9.jpg",
     "images": [
-      "https://wsrv.nl/?url=https%3A%2F%2Fdkyikirsvpauhbexbhvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fprofile-images%2F1775306523787-ls2ia005mr9.jpg&w=800&output=webp&q=80"
+      "/storage/profile-images/1775306523787-ls2ia005mr9.jpg"
     ],
     "shortBio": "",
     "description": "",
