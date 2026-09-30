@@ -152,12 +152,19 @@ const AdminPage = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setAuthLoading(true);
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) {
-      toast({ title: "Login failed", description: "Redirecting...", variant: "destructive" });
-      setAuthLoading(false);
-      setTimeout(() => router.push("/"), 1500);
-    } else {
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) {
+        toast({ title: "Login failed", description: error.message || "Invalid email or password", variant: "destructive" });
+        setAuthLoading(false);
+      } else if (data?.user) {
+        setIsAuthenticated(true);
+        setIsAdmin(true);
+        setAuthLoading(false);
+        toast({ title: "Admin Login Successful!" });
+      }
+    } catch (err: any) {
+      toast({ title: "Login error", description: err?.message || "Check your network connection", variant: "destructive" });
       setAuthLoading(false);
     }
   };
