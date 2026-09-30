@@ -311,7 +311,16 @@ const AdminPage = () => {
   };
 
   const uploadImage = async (file: File): Promise<string> => {
-    return uploadFile(file, "profile-images");
+    try {
+      return await uploadFile(file, "profile-images");
+    } catch (e) {
+      console.warn("Storage upload failed, using Data URL fallback:", e);
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result as string);
+        reader.readAsDataURL(file);
+      });
+    }
   };
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, type: "profile" | "gallery" | "ad_gallery") => {
