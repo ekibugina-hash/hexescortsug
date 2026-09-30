@@ -141,8 +141,43 @@ const AdminPage = () => {
   }, []);
 
   const fetchProfiles = async () => {
-    const { data, error } = await supabase.from("profiles").select("*").order("created_at", { ascending: false });
-    if (!error && data) setProfiles(data as any as DbProfile[]);
+    try {
+      const { data, error } = await supabase.from("profiles").select("*").order("created_at", { ascending: false });
+      if (!error && data && data.length > 0) {
+        setProfiles(data as any as DbProfile[]);
+        return;
+      }
+    } catch (e) {
+      console.error("DB fetch error:", e);
+    }
+
+    // Fallback: Map staticProfiles to DbProfile format so Admin Panel always displays all 83 profiles
+    const fallbackDbProfiles: DbProfile[] = staticProfiles.map((p) => ({
+      id: p.id,
+      name: p.name,
+      age: p.age || 20,
+      height: p.height || "",
+      body_type: p.bodyType || "",
+      complexion: p.complexion || "",
+      location: p.location,
+      phone: p.phone || "",
+      whatsapp: p.whatsapp || "",
+      email: p.email || "",
+      instagram: p.instagram || "",
+      short_bio: p.shortBio || "",
+      description: p.description || "",
+      services: p.services || [],
+      profile_image: p.profileImage || "",
+      images: p.images || [],
+      videos: p.videos || [],
+      is_pinned: p.isPinned || false,
+      is_archived: p.isArchived || false,
+      is_ad: p.isAd || false,
+      is_verified: p.isVerified || false,
+      ad_images: p.adImages || [],
+    }));
+
+    setProfiles(fallbackDbProfiles);
   };
 
   useEffect(() => {
