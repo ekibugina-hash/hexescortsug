@@ -64,6 +64,33 @@ interface EditProfile {
   adImages: string[];
 }
 
+const getInitialDbProfiles = (): DbProfile[] => {
+  return staticProfiles.map((p) => ({
+    id: p.id,
+    name: p.name,
+    age: p.age || 20,
+    height: p.height || "",
+    body_type: p.bodyType || "",
+    complexion: p.complexion || "",
+    location: p.location,
+    phone: p.phone || "",
+    whatsapp: p.whatsapp || "",
+    email: p.email || "",
+    instagram: p.instagram || "",
+    short_bio: p.shortBio || "",
+    description: p.description || "",
+    services: p.services || [],
+    profile_image: p.profileImage || "",
+    images: p.images || [],
+    videos: p.videos || [],
+    is_pinned: p.isPinned || false,
+    is_archived: p.isArchived || false,
+    is_ad: p.isAd || false,
+    is_verified: p.isVerified || false,
+    ad_images: p.adImages || [],
+  }));
+};
+
 const AdminPage = () => {
   const { toast } = useToast();
   const router = useRouter();
@@ -74,7 +101,7 @@ const AdminPage = () => {
   const [checkingRole, setCheckingRole] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [profiles, setProfiles] = useState<DbProfile[]>([]);
+  const [profiles, setProfiles] = useState<DbProfile[]>(getInitialDbProfiles);
   const [editingProfile, setEditingProfile] = useState<EditProfile | null>(null);
   const [saving, setSaving] = useState(false);
   const [showArchived, setShowArchived] = useState(false);
