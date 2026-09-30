@@ -5,7 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { slugify } from "@/lib/utils";
 import { unstable_cache } from 'next/cache';
 
-// Set this to true to bypass Supabase entirely and use only committed static data
+// Set this to true ONLY if you want to bypass Supabase entirely and use static data
 const FORCE_STATIC_DATA = false;
 
 export function createSeededRand(s: string) {
@@ -45,10 +45,10 @@ export function sortAndShuffleProfiles(profiles: ProfileType[], seed?: string): 
 function transformUrl(url: string | null | undefined): string {
   if (!url) return "/placeholder.svg";
 
-  // Already a clean local storage path — keep as-is
+  // Already a clean local storage path - keep as-is
   if (url.startsWith("/storage/")) return url;
 
-  // Already a root-relative path (placeholder etc.) — keep as-is
+  // Already a root-relative path (placeholder etc.) - keep as-is
   if (url.startsWith("/")) return url;
 
   // Extract just the filename from any Supabase or wsrv.nl URL
@@ -62,8 +62,7 @@ function transformUrl(url: string | null | undefined): string {
 
 /**
  * Get active (non-archived) static profiles to use as offline fallback.
- * Filtering here prevents archived profiles (whose images may be missing from
- * the repo backup) from ever showing publicly when Supabase is unavailable.
+ * Filtering here prevents archived profiles from ever showing publicly when Supabase is unavailable.
  */
 function getActiveStaticProfiles() {
   return staticProfiles.filter(p => !p.isArchived);
@@ -107,11 +106,6 @@ export async function fetchAllProfiles(seed?: string) {
     return seed ? sortAndShuffleProfiles(fallback, seed) : fallback;
   }
 
-  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
-    console.warn("No Supabase URL; using active static profiles fallback.");
-    return seed ? sortAndShuffleProfiles(fallback, seed) : fallback;
-  }
-  
   try {
     // @ts-ignore - Supabase type chain depth limit
     const { data, error } = await (supabase as any)
@@ -121,12 +115,12 @@ export async function fetchAllProfiles(seed?: string) {
       .order("is_pinned", { ascending: false })
       .order("created_at", { ascending: false });
 
-    if (error) {
-      console.error("Supabase error (likely quota hit), using active static backup:", error);
+    if (error || !data || data.length === 0) {
+      if (error) console.error("Supabase query error, using active static backup:", error);
       return seed ? sortAndShuffleProfiles(fallback, seed) : fallback;
     }
 
-    const dbProfiles: ProfileType[] = (data || []).map(mapDbProfile);
+    const dbProfiles: ProfileType[] = data.map(mapDbProfile);
     return seed ? sortAndShuffleProfiles(dbProfiles, seed) : dbProfiles;
   } catch (err) {
     console.error("Fetch exception, using active static fallback:", err);
@@ -135,14 +129,9 @@ export async function fetchAllProfiles(seed?: string) {
 }
 
 export async function fetchProfileById(id: string) {
-  // Include archived in lookup so direct profile links still work
   const allStatic = staticProfiles;
 
   if (FORCE_STATIC_DATA) {
-    return allStatic.find(p => p.id === id || slugify(p.name) === id) || null;
-  }
-
-  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
     return allStatic.find(p => p.id === id || slugify(p.name) === id) || null;
   }
 
@@ -181,7 +170,7 @@ export const fetchProfilesByLocation = unstable_cache(
       p.location.toLowerCase().includes(location.toLowerCase())
     );
 
-    if (FORCE_STATIC_DATA || !process.env.NEXT_PUBLIC_SUPABASE_URL) {
+    if (FORCE_STATIC_DATA) {
       return fallback;
     }
 
@@ -194,13 +183,13 @@ export const fetchProfilesByLocation = unstable_cache(
         .ilike("location", `%${location}%`)
         .order("is_pinned", { ascending: false });
 
-      if (error) throw error;
-      return (data || []).map(mapDbProfile);
+      if (error || !data || data.length === 0) return fallback;
+      return data.map(mapDbProfile);
     } catch (err) {
       console.error(`Error fetching profiles for ${location}:`, err);
       return fallback;
     }
   },
   ['location-profiles'],
-  { revalidate: 3600 }
+  { revalidate: 300 }
 );
