@@ -12,8 +12,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Trash2, Plus, LogOut, Video, Star, Archive, ArchiveRestore, ClipboardList, Megaphone } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useQueryClient } from "@tanstack/react-query";
-import { mockProfiles } from @/data/mockProfiles;
-import { staticProfiles } from @/data/staticProfiles;
+import { mockProfiles } from "@/data/mockProfiles";
+import { staticProfiles } from "@/data/staticProfiles";
 import ApplicationsPanel from "@/components/admin/ApplicationsPanel";
 
 interface DbProfile {
