@@ -736,34 +736,37 @@ export const staticProfiles: ProfileType[] = [
   },
   {
     "id": "ab88686d-01df-4feb-8eea-c397e63bc3a2",
-    "name": "Nahia",
-    "age": 22,
+    "name": "Kyomugisha Faith",
+    "age": 38,
     "height": "5'6\"",
     "bodyType": "Curvy",
-    "complexion": "Dark",
-    "location": "Gulu",
-    "rating": 4.5,
-    "profileImage": "/storage/profile-images/1776250857419-2l7bchjhcqa.jpg",
+    "complexion": "Medium",
+    "location": "Kireka",
+    "rating": 4.9,
+    "profileImage": "/storage/profile-images/1790811587688-kyomugisha-faith-1.jpg",
     "images": [
-      "/storage/profile-images/1776250857419-2l7bchjhcqa.jpg"
+      "/storage/profile-images/1790811587688-kyomugisha-faith-1.jpg",
+      "/storage/profile-images/1790811587882-kyomugisha-faith-2.jpg",
+      "/storage/profile-images/1790811587883-kyomugisha-faith-3.jpg"
     ],
-    "shortBio": "",
-    "description": "",
-    "phone": "0761926097",
+    "shortBio": "Sexy & experienced mature companion available in Kireka",
+    "description": "Available for incalls and outcalls in Kireka and surrounding areas.",
+    "phone": "0778781452",
+    "whatsapp": "0778781452",
     "services": [
       "Dating",
-      "Companionship"
+      "Companionship",
+      "Incalls",
+      "Outcalls"
     ],
-    "videos": [
-      "/storage/profile-images/1776250950531-xxt7ooy7qk.mp4"
-    ],
+    "videos": [],
     "reviews": [],
-    "isPinned": false,
+    "isPinned": true,
     "isArchived": false,
-    "isVip": false,
-    "isPremium": false,
+    "isVip": true,
+    "isPremium": true,
     "isAd": false,
-    "isVerified": false,
+    "isVerified": true,
     "adImages": []
   },
   {
