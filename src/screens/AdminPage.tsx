@@ -182,8 +182,8 @@ const AdminPage = () => {
   };
 
   useEffect(() => {
-    if (isAdmin) fetchProfiles();
-  }, [isAdmin]);
+    fetchProfiles();
+  }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
