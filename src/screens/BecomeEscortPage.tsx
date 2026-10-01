@@ -387,9 +387,7 @@ const BecomeEscortPage = () => {
                 Your first week runs as a VIP listing — top placement and a badge that gets more eyes on your ad. The remaining three weeks continue as a standard ordinary listing, still visible and searchable, just without the VIP boost.
               </p>
 
-              <div className="border-t border-[#3A2A31] pt-4 mb-6 text-xs text-[#B8A5AD]">
-                Best for sellers who want a strong launch push, then steady visibility for the rest of the month.
-              </div>
+
             </div>
 
             <button
@@ -414,9 +412,7 @@ const BecomeEscortPage = () => {
                 Already on the monthly plan? Add VIP placement to any of the ordinary weeks — weeks 2, 3, or 4 — for 10,000 shs each. Pay only for the weeks you want the extra visibility.
               </p>
 
-              <div className="border-t border-[#3A2A31] pt-4 mb-6 text-xs text-[#B8A5AD]">
-                Best for sellers who want to time their VIP boost around a sale, restock, or busy weekend.
-              </div>
+
             </div>
 
             <button
@@ -425,7 +421,7 @@ const BecomeEscortPage = () => {
                 setVipProfileIdentifier("");
                 setShowVipModal(true);
               }}
-              className="w-full text-center bg-transparent hover:bg-[#E8B93D]/10 border border-[#E8B93D] text-[#E8B93D] font-bold text-sm py-3.5 px-4 rounded-xl transition-all"
+              className="w-full text-center bg-[#E8B93D] hover:bg-[#d4a533] text-black font-bold text-sm py-3.5 px-4 rounded-xl transition-all shadow-md"
             >
               Add a VIP Week
             </button>
