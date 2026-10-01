@@ -3,86 +3,78 @@ import { ProfileType } from "@/types/profile";
 export const staticProfiles: ProfileType[] = [
   {
     "id": "4b410a8b-b413-45be-acb0-6933aa9e1685",
-    "name": "ADVENTURE SPA",
+    "name": "Pretty Babes Spa",
     "age": 20,
     "height": "5'5\"",
     "bodyType": "Curvy",
     "complexion": "Medium",
-    "location": "Kanyanya",
-    "rating": 4.5,
-    "profileImage": "/storage/profile-images/1789212475881-q9leoas03kc.jpg",
+    "location": "Kanyanya - Bahai Road",
+    "rating": 4.9,
+    "profileImage": "/storage/profile-images/1790874662307-pretty-babes-spa-profile.png",
     "images": [
-      "/storage/profile-images/1789212475881-q9leoas03kc.jpg",
-      "/storage/profile-images/1789136487281-ufbhl4q496p.jpg",
-      "/storage/profile-images/1789136514149-yjyaufxzf6f.jpg",
-      "/storage/profile-images/1789136531753-i5f224gc4dm.jpg",
-      "/storage/profile-images/1789136547615-x05kct8mfw.jpg",
-      "/storage/profile-images/1789136563325-8c28wt0rqg8.jpg",
-      "/storage/profile-images/1789136576691-ayjyovmxwnd.jpg",
-      "/storage/profile-images/1789136594450-kwcq4bbgsyl.jpg",
-      "/storage/profile-images/1789136602139-4n6gobjf1he.jpg",
-      "/storage/profile-images/1789136725048-qa9i5flv0sd.jpg",
-      "/storage/profile-images/1789136782603-c5lo8lx60cd.jpg"
+      "/storage/profile-images/1790874662307-pretty-babes-spa-profile.png"
     ],
-    "shortBio": "",
-    "description": "Escape the daily grind and step into a sanctuary built for total physical recovery and deep relaxation. At Adventure Spa, we blend restorative deep-tissue techniques, targeted muscle therapy, and soothing aroma blends designed to melt away stress and leave you completely recharged. Whether you're unwinding after a long, active week or simply taking well-deserved time for yourself, our expert therapists tailor every session to your exact needs. Treat yourself to an invigorating wellness experience today! âœ¨ðŸ’†â€â™‚ï¸ðŸ’†â€â™€ï¸\n Professional therapists, Deep Tissue & Reflexology, Calming Atmosphere, Easy Online Bookingâ¤ï¸ðŸ¥° ",
-    "phone": "+256750763163",
+    "shortBio": "Welcome to Pretty Babes Spa along Kanyanya-Bahai Road for total physical recovery and deep relaxation",
+    "description": "Welcome to Pretty Babes Spa along Kanyanya-Bahai Road. Services: Full Body Massage, Incalls & Outcalls, BJ & HandJob, Threesome, Group Sex, Squirting. Contact 0764802869 / @prettybabes.spa",
+    "phone": "0764802869",
+    "whatsapp": "0764802869",
+    "instagram": "@prettybabes.spa",
     "services": [
-      "Dating",
-      "Companionship"
+      "Full Body Massage",
+      "Incalls & Outcalls",
+      "BJ & HandJob",
+      "Threesome",
+      "Group Sex",
+      "Squirting"
     ],
     "videos": [],
     "reviews": [],
     "isPinned": true,
     "isArchived": false,
-    "isVip": false,
-    "isPremium": false,
+    "isVip": true,
+    "isPremium": true,
     "isAd": true,
     "isVerified": true,
     "adImages": [
-      "/storage/profile-images/1789134925802-i4fyoz57re.jpg"
+      "/storage/profile-images/1790874850535-pretty-babes-spa-ad.png"
     ]
   },
   {
     "id": "e7f74b32-4905-460a-9a4a-aafe5c0d2641",
-    "name": "FANTASIA SPA",
+    "name": "Spa Bella Vida",
     "age": 20,
     "height": "5'7\"",
     "bodyType": "Curvy",
     "complexion": "Medium",
-    "location": "Kisaasi",
-    "rating": 4.5,
-    "profileImage": "/storage/profile-images/1789212569434-0clhx5jv68yb.jpg",
+    "location": "Kisaasi - Bukoto Road",
+    "rating": 4.9,
+    "profileImage": "/storage/profile-images/1790874632710-spa-bella-vida-profile.png",
     "images": [
-      "/storage/profile-images/1789212569434-0clhx5jv68yb.jpg",
-      "/storage/profile-images/1789139117352-g79n7vgon1m.jpg",
-      "/storage/profile-images/1789139120804-h4stdj9xeh.jpg",
-      "/storage/profile-images/1789139123031-vnlzwpj53qc.jpg",
-      "/storage/profile-images/1789139125939-94xsq8k5sq.jpg",
-      "/storage/profile-images/1789139165979-nyjm8wmidtn.jpg",
-      "/storage/profile-images/1789139168428-ro3dzf2001.jpg",
-      "/storage/profile-images/1789139169639-rwhi9yslyl.jpg",
-      "/storage/profile-images/1789139170904-sdy2wwvrjq.jpg",
-      "/storage/profile-images/1789139171835-ysg88uvmwpk.jpg",
-      "/storage/profile-images/1789139172841-gpyz7q93vqq.jpg"
+      "/storage/profile-images/1790874632710-spa-bella-vida-profile.png"
     ],
-    "shortBio": "",
-    "description": "â€‹âœ¨ Fantasia Spa â€” Step Into Pure Serenity & Blissâ¤ï¸ðŸ˜˜ \nâ€‹Indulge your senses in an unforgettable escape at Fantasia Spa. From the moment you walk through our doors, gentle scents, warm lighting, and calm ambient tones transport you into pure relaxation. Our signature Swedish massages, hot stone treatments, and customized wellness therapies are crafted to ease tension, soothe your mind, and boost your energy. You don't just get a massage hereâ€”you get a full sensory retreat. ðŸƒðŸŒº\n Luxury Ambience, Signature Oil Blends, Stress Relief & Muscle Care, Couple & Solo Packages",
-    "phone": "+256706902609",
+    "shortBio": "Step Into Pure Serenity & Bliss at Spa Bella Vida along Kisaasi-Bukoto Road",
+    "description": "Step Into Pure Serenity & Bliss at Spa Bella Vida. Located along Kisaasi-Bukoto Road. Services: Full Body Massage, Incalls & Outcalls, BJ & HandJob, Threesome, Group Sex, Squirting. Contact 0706902609 / @spabellavida",
+    "phone": "0706902609",
+    "whatsapp": "0706902609",
+    "instagram": "@spabellavida",
     "services": [
-      "Dating",
-      "Companionship"
+      "Full Body Massage",
+      "Incalls & Outcalls",
+      "BJ & HandJob",
+      "Threesome",
+      "Group Sex",
+      "Squirting"
     ],
     "videos": [],
     "reviews": [],
     "isPinned": true,
     "isArchived": false,
-    "isVip": false,
-    "isPremium": false,
+    "isVip": true,
+    "isPremium": true,
     "isAd": true,
     "isVerified": true,
     "adImages": [
-      "/storage/profile-images/1789134435150-9udciufm9e6.jpg"
+      "/storage/profile-images/1790874832245-spa-bella-vida-ad.png"
     ]
   },
   {
