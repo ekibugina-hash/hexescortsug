@@ -87,13 +87,30 @@ const BecomeEscortPage = () => {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
-  const uploadFile = async (file: File, bucket: string): Promise<string> => {
-    const ext = file.name.split(".").pop();
-    const path = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
-    const { error } = await supabase.storage.from(bucket).upload(path, file);
-    if (error) throw error;
-    const { data } = supabase.storage.from(bucket).getPublicUrl(path);
-    return data.publicUrl;
+  const uploadFile = async (file: File, bucket: string = "profile-images"): Promise<string> => {
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("folder", bucket);
+      
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+      
+      const data = await res.json();
+      if (!res.ok || !data.url) {
+        throw new Error(data.error || "Upload failed");
+      }
+      return data.url;
+    } catch (err: any) {
+      console.warn("Cloudflare R2 upload fallback to Data URL:", err);
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result as string);
+        reader.readAsDataURL(file);
+      });
+    }
   };
 
   const uploadImage = async (file: File): Promise<string> => {
