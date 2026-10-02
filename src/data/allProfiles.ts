@@ -45,13 +45,16 @@ export function sortAndShuffleProfiles(profiles: ProfileType[], seed?: string): 
 function transformUrl(url: string | null | undefined): string {
   if (!url) return "/placeholder.svg";
 
-  // Already a clean local storage path - keep as-is
+  // R2 Public CDN URLs — keep as-is
+  if (url.includes(".r2.dev/") || url.includes("cloudflarestorage.com")) return url;
+
+  // Local Vercel static CDN paths — keep as-is
   if (url.startsWith("/storage/")) return url;
 
-  // Already a root-relative path (placeholder etc.) - keep as-is
+  // Root-relative paths — keep as-is
   if (url.startsWith("/")) return url;
 
-  // Extract just the filename from any Supabase or wsrv.nl URL
+  // Extract filename from any legacy Supabase or wsrv.nl URL
   const match = url.match(/([a-zA-Z0-9.\-_]+\.(?:jpg|jpeg|png|webp|jfif|avif|mp4|mov))/i);
   if (match && match[1]) {
     return `/storage/profile-images/${match[1]}`;
