@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { NextResponse } from "next/server";
 
 const ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID;
