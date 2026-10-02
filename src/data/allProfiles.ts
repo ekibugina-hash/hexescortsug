@@ -110,25 +110,18 @@ export async function fetchAllProfiles(seed?: string) {
   }
 
   try {
-    // @ts-ignore - Supabase type chain depth limit
-    const { data, error } = await (supabase as any)
-      .from("profiles")
-      .select("*")
-      .eq("is_archived", false)
-      .order("is_pinned", { ascending: false })
-      .order("created_at", { ascending: false });
-
-    if (error || !data || data.length === 0) {
-      if (error) console.error("Supabase query error, using active static backup:", error);
-      return seed ? sortAndShuffleProfiles(fallback, seed) : fallback;
+    const apiRes = await fetch("/api/profiles");
+    if (apiRes.ok) {
+      const d1Profiles = await apiRes.json();
+      if (Array.isArray(d1Profiles) && d1Profiles.length > 0) {
+        return seed ? sortAndShuffleProfiles(d1Profiles, seed) : d1Profiles;
+      }
     }
-
-    const dbProfiles: ProfileType[] = data.map(mapDbProfile);
-    return seed ? sortAndShuffleProfiles(dbProfiles, seed) : dbProfiles;
-  } catch (err) {
-    console.error("Fetch exception, using active static fallback:", err);
-    return seed ? sortAndShuffleProfiles(fallback, seed) : fallback;
+  } catch (e) {
+    console.warn("Cloudflare D1 fetch error, using active static fallback:", e);
   }
+
+  return seed ? sortAndShuffleProfiles(fallback, seed) : fallback;
 }
 
 export async function fetchProfileById(id: string) {
