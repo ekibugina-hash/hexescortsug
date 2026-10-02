@@ -2,18 +2,28 @@ import { NextResponse } from "next/server";
 import { S3Client, PutObjectCommand, GetObjectCommand } from "@aws-sdk/client-s3";
 
 const R2_BUCKET = process.env.CLOUDFLARE_R2_BUCKET || "hexescorts-media";
+const R2_PUBLIC_URL = process.env.CLOUDFLARE_R2_PUBLIC_URL || "https://pub-aa01e6dca81f482ab084275e93025a99.r2.dev";
 const APPLICATIONS_KEY = "data/applications.json";
 
-const s3Client = new S3Client({
-  region: "auto",
-  endpoint: process.env.CLOUDFLARE_R2_ENDPOINT || "https://b07234f65853d0f9f8e6fa1896cf06db.r2.cloudflarestorage.com",
-  credentials: {
-    accessKeyId: process.env.CLOUDFLARE_R2_ACCESS_KEY_ID || "7dd0399854775e1fb6eacee70f5a1a49",
-    secretAccessKey: process.env.CLOUDFLARE_R2_SECRET_ACCESS_KEY || "2bfa7f87c5ba92ecc1a243b494c10c28d4d61a4f469bce8629fd82247d02341a",
-  },
-});
+const accessKeyId = process.env.CLOUDFLARE_R2_ACCESS_KEY_ID;
+const secretAccessKey = process.env.CLOUDFLARE_R2_SECRET_ACCESS_KEY;
+const endpoint = process.env.CLOUDFLARE_R2_ENDPOINT || "https://b07234f65853d0f9f8e6fa1896cf06db.r2.cloudflarestorage.com";
+
+function getS3Client() {
+  if (!accessKeyId || !secretAccessKey) return null;
+  return new S3Client({
+    region: "auto",
+    endpoint,
+    credentials: {
+      accessKeyId,
+      secretAccessKey,
+    },
+  });
+}
 
 async function getApplicationsFromR2() {
+  const s3Client = getS3Client();
+  if (!s3Client) return [];
   try {
     const res = await s3Client.send(new GetObjectCommand({ Bucket: R2_BUCKET, Key: APPLICATIONS_KEY }));
     const str = await res.Body?.transformToString();
@@ -24,6 +34,8 @@ async function getApplicationsFromR2() {
 }
 
 async function saveApplicationsToR2(apps: any[]) {
+  const s3Client = getS3Client();
+  if (!s3Client) return;
   const jsonStr = JSON.stringify(apps, null, 2);
   await s3Client.send(
     new PutObjectCommand({
