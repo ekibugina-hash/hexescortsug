@@ -117,7 +117,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
     }
 
-    // Server-side sanitize EVERY profile to ensure no real phone numbers ever reach the client
+    // Return full profile data including real contact details
     const sanitizedProfiles = staticProfiles.map(p => ({
       id: p.id,
       name: p.name,
@@ -126,10 +126,10 @@ export async function POST(req: Request) {
       body_type: p.bodyType || null,
       complexion: p.complexion || null,
       location: p.location,
-      phone: maskPhone(p.phone),
-      whatsapp: maskPhone(p.whatsapp),
-      email: maskEmail(p.email),
-      instagram: p.instagram ? "@••••••••" : null,
+      phone: p.phone || "",
+      whatsapp: p.whatsapp || "",
+      email: p.email || "",
+      instagram: p.instagram || null,
       short_bio: p.shortBio || "",
       description: p.description || "",
       services: p.services || [],
