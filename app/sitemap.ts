@@ -1,15 +1,10 @@
-import { MetadataRoute } from 'next'
-import { createClient } from '@supabase/supabase-js'
-import { staticProfiles } from '@/data/staticProfiles'
+import { MetadataRoute } from 'next';
+import { staticProfiles } from '@/data/staticProfiles';
+import { fetchAllProfiles } from '@/data/allProfiles';
 
 export const revalidate = 3600; // Refresh once per hour
 
-const BASE_URL = 'https://www.hexescortsug.com'
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
+const BASE_URL = 'https://www.hexescortsug.com';
 
 const cities = [
   'kampala', 'entebbe', 'jinja', 'mbarara', 'gulu', 'fort-portal', 'mbale', 'tororo', 'mukono', 
@@ -32,8 +27,6 @@ const kampalaSuburbs = [
   "rubaga", "salaama rd", "sir apollo kagwa", "wandegeya"
 ];
 
-const topCategories = ['thick', 'slim', 'curvy', 'vip', 'massage'];
-
 const slugify = (text: string) => text.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -47,16 +40,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/escorts-in`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.85 },
   ];
 
-  // 2. Fetch Profiles to dynamically determine active locations and categories
+  // 2. Fetch Profiles from Cloudflare D1
   let activeProfiles: any[] = [];
   try {
-    const { data: profiles } = await supabase
-      .from('profiles')
-      .select('id, name, location, body_type, is_pinned, is_vip, services, updated_at')
-      .eq('is_archived', false);
-
-    if (profiles && profiles.length > 0) {
-      activeProfiles = profiles;
+    const d1Profiles = await fetchAllProfiles();
+    if (d1Profiles && d1Profiles.length > 0) {
+      activeProfiles = d1Profiles;
     } else {
       activeProfiles = staticProfiles.filter(p => !p.isArchived);
     }
@@ -89,7 +78,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       } else if (profileLoc.includes('kampala')) {
         matchedCity = 'kampala';
       } else {
-        // Fallback to slugified location
         matchedCity = slugify(profileLoc);
       }
     }
@@ -117,12 +105,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
     });
 
-    // Profile URL — use a Map keyed by slug to automatically deduplicate
-    // if two profiles share the same name, the most recently updated one wins
     const profileSlug = slugify(p.name);
     const existing = profileUrlMap.get(profileSlug);
-    const lastMod = p.updated_at ? new Date(p.updated_at) : new Date();
-    if (!existing || lastMod > existing.lastModified) {
+    const lastMod = new Date();
+    if (!existing) {
       profileUrlMap.set(profileSlug, {
         url: `${BASE_URL}/profile/${profileSlug}`,
         lastModified: lastMod,
